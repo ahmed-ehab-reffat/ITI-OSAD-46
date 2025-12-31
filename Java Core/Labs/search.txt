@@ -1,0 +1,14 @@
+oop in depth
+inhertance types 
+private constructor	=> only one instance
+abstract vs interface 
+exception	=>	Checked - Unchecked Exceptions 
+<? extends Shape>	=> upper and lower bounded wildcard.
+exception propagation	=>
+	Exception thrown: An error (like division by zero) happens in a method (e.g., MethodC).
+	Check for handler: The system checks if MethodC has a try-catch block for that exception.
+	Propagate if unhandled: If not, the exception is "thrown" to the calling method (e.g., MethodB).
+	Continue up the stack: This repeats for MethodB (propagating to MethodA), then MethodA, and so on, up the call stack.
+	Catch or terminate:
+	If a method (e.g., main) has a handler, the exception stops there.
+	If it reaches the top (the JVM), the program crashes and prints a stack trace. 

@@ -1,0 +1,4 @@
+To compile and run on linux:-
+
+sudo apt-get install libsdl2-dev
+g++ *.cpp -o main -lSDL2 && ./main
