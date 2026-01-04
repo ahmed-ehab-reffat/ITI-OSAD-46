@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed Ehab Ahmed</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Create an Account</h2>
+      <form action="./Thankyou.html" method="GET">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname" required />
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname" required />
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" />
+
+        <label for="repeat-password">Repeat Password</label>
+        <input type="password" id="repeat-password" name="repeat-password" />
+
+        <label for="birthdate">Birth Date</label>
+        <input type="date" id="birthdate" name="birthdate" />
+
+        <label for="user-pic">User Picture</label>
+        <input type="file" id="user-pic" name="user-pic" accept="image/*" />
+
+        <fieldset>
+          <legend>Gender</legend>
+          <input type="radio" id="male" name="gender" value="male" />
+          <label for="male" class="inline">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female" class="inline">Female</label>
+        </fieldset>
+
+        <label for="faculty">Faculty</label>
+        <select id="faculty" name="faculty">
+          <option value="">--Please choose an option--</option>
+          <option value="engineering">Engineering</option>
+          <option value="science">Science</option>
+          <option value="arts">Arts</option>
+          <option value="business">Business</option>
+        </select>
+
+        <fieldset>
+          <legend>Interests</legend>
+          <input
+            type="checkbox"
+            id="programming"
+            name="interests"
+            value="programming"
+          />
+          <label for="programming" class="inline">Programming</label><br />
+          <input
+            type="checkbox"
+            id="reading"
+            name="interests"
+            value="reading"
+          />
+          <label for="reading" class="inline">Reading</label><br />
+          <input
+            type="checkbox"
+            id="swimming"
+            name="interests"
+            value="swimming"
+          />
+          <label for="swimming" class="inline">Swimming</label>
+        </fieldset>
+
+        <label for="about">About You</label>
+        <textarea
+          id="about"
+          name="about"
+          rows="4"
+          placeholder="Tell us about yourself..."
+        ></textarea>
+
+        <div class="terms">
+          <input type="checkbox" id="terms" name="terms" required />
+          <label for="terms" class="inline"
+            >I agree to the terms and conditions</label
+          >
+        </div>
+
+        <div class="button-group">
+          <button type="submit">Submit</button>
+          <button type="reset" class="reset-btn">Reset</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
