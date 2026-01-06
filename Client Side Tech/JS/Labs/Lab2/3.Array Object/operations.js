@@ -3,7 +3,7 @@ var arr = [];
 
 var labels = ["first", "second", "third"];
 while (arr.length < 3) {
-  var value = prompt(`Enter the ${labels[arr.length]} number`);
+  var value = prompt(`Enter the ${labels[arr.length]} number of 3`);
   while (!numberRegex.test(value)) {
     value = prompt("Invalid number. Please enter a valid numeric number:");
   }

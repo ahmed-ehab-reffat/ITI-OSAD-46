@@ -1,7 +1,7 @@
 const str = prompt("Enter a string to check if it's a palindrome:");
 
 const isCaseSensitive = confirm(
-  "Do you want to consider case sensitivity?\n('No' or 'Yes')"
+  "Do you want to consider case sensitivity?\n('Cancel' for NO and 'OK' for Yes)"
 );
 
 let processedStr = str;
