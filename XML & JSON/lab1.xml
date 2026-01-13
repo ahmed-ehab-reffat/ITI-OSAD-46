@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<library location="Giza, Haram" description="Egyptian library">
+  <librarian>Ahmed Ehab Ahmed</librarian>
+  <books>
+    <book title="XML and JSON" ISBN="1234" author="Ahmed Ehab Ahmed">
+      <preface>This is a classic tale of adventure.</preface>
+      <parts>
+        <part title="The Journey Begins">
+          <chapters>
+            <chapter title="Departure">
+              <summary>The hero leaves home.</summary>
+              <section>
+                <content>
+                  <![CDATA[
+                    The ship sailed at dawn. It was a cold & misty morning. 
+                    The crew whispered, "Will we ever return?"
+                    ]]>
+                </content>
+              </section>
+            </chapter>
+            <chapter title="The Storm">
+              <summary>A great storm hits the fleet.</summary>
+              <section>
+                <content>
+                  <![CDATA[
+                    Thunder rolled across the dark skies.
+                    ]]>
+                </content>
+                <p></p>
+              </section>
+            </chapter>
+          </chapters>
+        </part>
+      </parts>
+    </book>
+    <book title="XML Mastery" ISBN="123-456-789" author="Jane Smith">
+      <preface>Learning data structures.</preface>
+      <part title="Basics">
+        <chapter title="Introduction">
+          <summary>Brief overview of tags.</summary>
+          <section>
+            <content>
+            <![CDATA[
+              XML stands for eXtensible Markup Language.
+              ]]>
+          </content>
+          </section>
+        </chapter>
+      </part>
+    </book>
+  </books>
+
+</library>

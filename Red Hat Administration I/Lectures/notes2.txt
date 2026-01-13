@@ -1,0 +1,11 @@
+permitions no spaces
+octal mode -> chmod 760 -> chmod u=rwx,g=rw,o=
+octal mode only can assign
+umask used for unwanted permisions
+umask 277 -> dr-x------	|| -r--------	bec execute is essential for directories but not for files
+umask 000 -> drwxrwxrwx || -rw-rw-rw-
+chmod a+x testfile -> -rwxrwxrwx
+
+need no permition to delete file just to have a write permition for its parent directory
+
+

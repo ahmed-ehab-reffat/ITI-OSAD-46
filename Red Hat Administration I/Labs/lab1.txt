@@ -1,0 +1,51 @@
+1-  install Ubuntu
+
+2-  cat displays all the file content at once
+    more displays the content page by page
+    cat is suitable for short files while more is for long files
+
+3-  rm remove files or directories
+    rmdir remove empty directories
+
+4-	mkdir dir1 docs
+	cd docs
+	touch mycv
+	cd ../dir1
+	mkdir dir11 dir12
+	touch dir11/file1
+	
+a-	rm dir1/dir11	
+	rm: cannot remove 'dir1/dir11': Is a directory
+	rm -r dir1/dir11
+	
+b-	rmdir -p dir1/dir12
+	remove directory and its ancestors; dir1 removed
+	
+c-	absolute path: /home/ahmed/docs/mycv
+	relative path: ./docs/mycv
+
+5-	cp /etc/passwd mypasswd
+
+6-	mv mypasswd oldpasswd
+
+7-	1- cd ~
+	2- cd ../../home/ahmed
+	3- cd /home/ahmed
+	4- cd
+	
+8-	cd /usr/bin
+	ls w*
+
+9-	head -4 /etc/passwd
+
+10-	tail -7 /etc/passwd
+
+11-	whatis passwd
+	man passwd && man 5 passwd
+	or man -a passwd
+
+12-	man 5 passwd
+
+13-	man -k passwd
+
+

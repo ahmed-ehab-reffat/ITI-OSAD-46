@@ -1,0 +1,75 @@
+1-	sudo useradd -md /home/islam -c "Islam Askar" -s /bin/bash islam
+	sudo passwd islam
+
+2-	sudo useradd -md /home/baduser -c "Bad User" -s /bin/bash baduser
+	sudo passwd baduser
+
+3-	sudo groupadd -g 30000 pgroup
+
+4-	sudo groupadd badgroup
+
+5-	sudo usermod -aG pgroup islam
+
+6-	sudo passwd islam
+
+7-	sudo chage -M 30 islam
+
+8-	sudo usermod -L baduser
+
+9-	sudo userdel -r baduser
+
+10-	sudo groupdel badgroup
+
+13-	mkdir myteam
+	chmod a-rwx,u+r myteam		or		chmod 400 myteam
+
+14-	su - user
+
+15-	cd myteam
+	-bash: cd: myteam: No such file or directory
+	
+16-	chmod u+rw-x,g+wx-r,o-rw+x oldpasswd
+	chmod 631 oldpasswd
+	
+	umask 146
+	
+	file by default can have 6 permitions
+	folder by default can have 9 permitions
+	
+	umask 777
+	mkdir dir3
+	touch f3
+
+17-	copy source directory -> read
+	copy target parent directory -> write
+	
+	copy source file -> read
+	copy target parent file -> execute
+	
+	delete source file -> write
+	delete target parent file -> 
+	
+	Change to a directory -> execute
+	
+	List a directory content -> read
+	
+	View a file content -> read
+	
+	Modify a file content -> write
+
+18- touch f4
+	vi f4
+	:wq
+	E45: 'readonly' option is set (add ! to override)
+	:q!
+	rm f4
+	rm: remove write-protected regular empty file 'f4'?
+
+19- x for file : You can execute the file if it is an executable.
+	You can execute a shell script if you also have read and execute permissions.
+	
+	x for directory	You can use the cd command to access the directory.
+
+
+	
+	

@@ -1,0 +1,46 @@
+1-	compress -v result
+	replaced with result.Z Compression: 78.36%
+	uncompress -v result.Z
+	
+	gzip -v result
+	92.9% -- replaced with result.gz
+	gunzip -v result.gz
+	
+	zip -v result.zip result
+  	adding: result ..	(in=30094059) (out=2129739) (deflated 93%)
+	total bytes=30094059, compressed=2129739 -> 93% savings
+	unzip -v result.zip
+
+2-	zcat
+
+3-	tar cvf ./etcBackup.tar /etc
+
+4-	find ~ -mtime -2
+
+5-	find /etc -user root
+
+6-	find ~ -type d
+
+7-	find / -name .profile 
+
+8-	ls -ld /etc/passwd /dev/tty /etc /dev/sda
+	b	Block device		/dev/sda
+	c	Character device 	/dev/tty
+	d	directory			/etc
+	-	file				/etc/passwd
+
+9-	ls -id / /etc /etc/hosts
+
+10-	cp /etc/passwd /home/ahmed
+	diff /etc/passwd /home/ahmed/passwd
+	vi /home/ahmed/passwd
+	diff /etc/passwd /home/ahmed/passwd
+	2d1
+	< daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+
+
+11-	sudo ln -s /etc/passwd /boot/softlink
+
+12-	ln /etc/passwd /boot/hardlink
+	faild becuase they are in diffrent partition
+

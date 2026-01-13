@@ -1,0 +1,21 @@
+vi 3 modes command, Edit and Last line mode
+i -> Edit
+esc -> command
+: -> last line
+u -> undo
+dd -> cut
+
+man bash  |  env  -> environment variables
+
+PATH=/home/ahmed	->	you can execute script file in this dir
+PATH=$PATH:/home/ahmed
+
+PATH variable is temp if you change somthing and reopen terminal it will be reverted
+
+PS1=helloo :)	-> replace device name in terminal
+
+alias	->	show all aliasis
+alias ls="ls -F"
+\ls  |  \bin\ls  | unalias ls
+
+su -	-> switch to root user by password

@@ -1,0 +1,125 @@
+-- Mapping ERD to TABLES
+Emps [#ssn, name, salary, image, DOB, Street, Zone, d_no(FK), supervisor_ssn(FK),
+		contr_id, type, start_date  ]
+	101  Aly  	6000    ,, , , , 		   20	103
+	102  Mostafa    8000   , , , , , 		   20	103
+	103  Marwa	9000  ,,,,   	  10	104
+	104  Maha	1000  ,,,    	  10	105
+	105  Mai	9000  ,,,, ,,  ,  		  30	106
+	106  Hesham	9000  ,,,, ,,	  30
+
+Emps_Phones [#ssn(FK), #phone]    
+	 101  01016549879
+	 101  01249879875
+	 102  01146879879
+	 103  01049879879
+	 103  01154987998
+
+			-- assume phone may repeat per multi employees
+			 -- both columns donot repeat  ( both columns will be PK = Composite Primary Key)
+				   -- ssn is a foreign key عامود ربط reference to ssn pk in Emps table
+
+Depts [#d_no, d_name, loc,  dept_mgr_SSN(FK + U), start_mgd_date ]
+	10	IT		104		12-6-2022
+	20	Sales		105		10-6-2025
+	30 	Admins      	106		11-3-2025
+
+
+Projects [#p_no, p_name]
+	1001	 Delta			{ Marwa - Mai - Hesham }
+	1002	 Suez			{ Mai - Hesham }
+	1003	 Assuit			{Mostafa - Maha - Mai }
+
+
+Emps_Projects [#ssn(FK), #p_no(FK), no_hours ]
+		105	1001            22
+		105	1002            30
+		105	1003            60
+		103	1001       ,,,,
+		106	1001
+		106	1002
+		102	1003
+		104	1003
+
+
+Skills [#s_id, s_name ]
+	1	web dev
+	2	networking
+	3	database
+
+
+Emps_Projects_Skills[#ssn(fk), #p_no(fk), #skill_id(fk)]
+		101	1001	  3
+		101	1002	   2
+		102	1001	   1
+		102	1002	   1
+
+
+
+Dependant [#ssn(FK), #name, relation  ]
+	101	Heba	wife
+	101	Marwa	daughter
+	
+
+
+
+Car [#plate_no, model, color, SSN(FK + U)  ]
+
+
+
+
+
+
+
+# Rules #
+1- Composite Primary Key on mapping
+	- Many To Many relationship	(emps-projects)
+	- Multi Values Attribute	( phone)
+	- Weak Entity Set		(dependent)
+
+2- Ternary relationship M-M-M
+	- can be solved to 3 binary M-M relations
+	- Participation Must - Must - Must
+
+3- Merge 2 tables
+	- one to one and Must Must
+
+4- Unary Relationship
+	- Participation May May
+
+
+5- how to know the weak entity set ?
+	a. no primary key
+	b. this entity will be deleted if the strong entity deleted
+
+____________________
+# Cardianlity Roles Mapping : 
+1- One to Many  
+ put a foreign in the ( many ) table refer to pk in the ( 1 ) table 
+
+2- One to One
+
+ضيف الفوريين كيي في الجدول اللى فيه اقل عدد من الصفوف ولااااازم يكون الفوريين كيي ( لا يتكرر )
+	FK + unique
+
+3- Many to Many
+
+Mapping Role : بينزل جدول جديد في النص يحتوى على 2 الفوريين كييز من الجدولين  ونخلى العامودين يكونوا 
+composite primary key
+_______________________________ 
+
+
+
+مثال اخر عن ال 
+recursive
+
+category_id	category_name	parent_category_id
+1		اجهزة كهربية
+2		ملابس
+3		اكسسوارات
+4		لابتوبات			1
+5		تلاجات			1
+6		ملابس رجالى		2
+7		لابتوبات توشيبا		4
+
+

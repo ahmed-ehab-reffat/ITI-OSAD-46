@@ -1,0 +1,181 @@
+SDLC 
+======
+1- Planning & Requirements & Analysis 
+2- Design 
+    - Desktop , Embedded System , Website , mobile , ..........
+        IoT Application Embedded+SW <-------------> APP+Cloud
+    - DataBase [SQL - NoSQL (4 types )] 
+        facebook ----> 10 types of DB 
+    - UI / UX  ====> Interfacing 
+        Things  --------Interfacing -------> Things
+        user    ------------Switch---------> lamp  
+        User --------> GUI + APP
+ 
+        Developers/scripts(APP) -------->  CLI + APP
+        ====================================
+        CLI Command Line Interface :- 
+        ==================================
+            - Very fast & powerful
+                touch file{1..100} ===>[Create 100 file] GUI ===> ??? 
+                touch ~/Videos/file3 ~/Music/file1
+            - WebServer [GUI , CLI]
+                Servers =======> CLI 
+                GUI High Resources 
+            - Connecting Server Remotely 
+                GUI ====> TeamViewer / anyDesk 
+                CLI ====> SSH [Username/password, Public,private Key]
+            - One language for All Different OS Linux 
+              Different Disribution
+                OS=Kernel + Library + GUI SHELL + PackageManager    
+               1- Different Family [puzzule]
+                PackageManager==> Sw Download + Install or Remove or update any application 
+                    apt ===========> Repo [All Application]
+                        ===========> Other Software 
+                    ubuntu ===> Debian Family ===> apt ==> .deb 
+                    redhat ===> Redhat        ===> yum ==> .rpm
+ 
+                cross PackageManager snap or flatpak
+                    snap ===========> Repo [zoom]
+                    sudo snap install zoom 
+                PackageManager in Programming 
+                    python ====> download Library install 
+                        pip install pymongo 
+                    Node 
+                        npm install library
+               2- Different Target 
+                    Developers -----> ubuntu  
+                    Servers -----> Redhat 
+                    Hackers -----> Kali 
+                    Games   -----> .....
+                    Windows user -----> .... 
+
+ 
+        CLI
+        user==>Terminal [Place Write Command] ===> Shell {Interpreter} ==> kernel(SW)
+ 
+        tty ===> Login Terminal/shell  
+        pts ===> No LoginTerminal/shell ==> Open With GUI 
+        pts ===> ssh Connection
+ 
+ 
+        echo "$SHELL" ===> /usr/bin/bash "current user shell
+        grep 'mina' /etc/passwd ===> mina:x:1000:1000:mina,,,:/home/mina:/usr/bin/bash
+        echo "$0" ==> bash "current session shell"
+ 
+            user ====> ksh , sh , bash , zsh ====> linux[Kernel]
+
+ 
+        #REPL ====> Read Evaluate Print Loop 
+        User =====> Python CLI ===> Python Language 
+        #DB Shell
+        user =====> mysql shell ===> DBMS SQL  
+        user =====> mongosh ====> MONGODB
+ 
+         sudo systemctl status mysql.service
+         sudo systemctl status mongod.service
+ 
+    # How Create Script :- 
+    # =======================
+ 
+        cat file1  
+        cat ./file1 
+        cat ~/Music/file1 
+        can't Run File using Name
+ 
+ 
+        ./file1 
+        ~/Music/file1
+ 
+====================================================================================
+        How Run FileScript Using Name 
+        ============================
+            1- create file 
+                touch ~/Music/file1 
+            2- Write code 
+                   #! /usr/bin/python3   ===> which python3
+                   print("Pythonic")
+            3- Add Execute Permission 
+                chmod u+x ~/Music/file1
+            4- Run using path not name 
+                a- Create alias (Not Recommended)
+                    alias commandfile="~/Music/file1"
+                    commandfile
+                b- PATH ===> Enviroment Variables all Paths Executeable Files 
+                    export PATH=$PATH:~/Music 
+                    echo 'export PATH=$PATH:~/Music' >>~/.bashrc
+ 
+    crontab [Scheduler] ====> Script
+ 
+ 
+ 
+    APP --------------->API -------->  APP 
+    API+internet=WebService
+ 
+    APP ----------Data -----> APP 
+    WebService Style :- 
+        SOAP 
+        RestFULlAPI [HTTP+JSON/XML+METHODS(GET,POST,PUT,DELETE)]
+        GRAPHQL 
+        GRPC 
+        PUB/SUB 
+====================================================================================
+3- Implementation Code Language ??
+====================================================================================
+4- Testing 
+===================================================================================
+5- Deployment and Production 
+================================================================================
+6- maintance 
+fix bugs 
+update feature 
+update code 
+=============================================================================
+7- Documentation 
+=================================================================================
+SDLC Models 
+========================
+waterfall 
+V-Model 
+Agile 
+===================================================================================
+ 
+Language of Level:- 
+        Machine Language 
+        Low Level Language Assembly 
+            Add Rx,5====> Translator[Assembler] =====> 101000
+        High level (C,C++,java........)
+            SourceCode ====> Translator ====> MachineLanguage  
+                              Interpreter 
+                              Compiler 
+============================================================================
+----------
+----------     ====> Compiler ====> ExecuteableFile.exe 
+----------
+||===Development====||=======BUILD=====||========RUN=======||
+============================================================================
+------------
+------------  
+------------  ====> Interpreter ====> 
+------------
+============================================================================
+ 
+source code ====> Compiler c ===> .exe
+ 
+write once Run EveryWhere 
+sourcejava===> CompilerJava===> ByteCode 
+                                    ||
+                        JVM+JIT(Just in Time Compiler)
+============================================================================
+Python ========== BOX ======> MachineLanguage 
+                cpython 
+                jython 
+                ironython 
+                pypy 
+                cython 
+============================================================================
+Cpython :- 
+==============
+python    ===> Tokenizer ===> ByteCode 
+                                ||
+                                PVM
+============================================================================

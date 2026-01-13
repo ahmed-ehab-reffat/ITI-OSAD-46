@@ -1,0 +1,70 @@
+Car rental company:
+
+Officess [#ID, Contact_no, address]
+
+Owners [#National_ID, Full_name, bank_acc_no, Office_ID(FK)]
+
+Car [#ID, brand, model, name, status, rent_amount, car_license, Owner_ID(FK)]
+
+Car_Tenant [#CarID(Fk), #TenantID(FK), start_date, duration, payment_method]
+
+Tenant [#National_ID, drive_license, contact_no]
+
+-----------------------------------------------------------------------------------
+Medical analysis laboratory:
+
+laboratory [#Code, name, city, street, building_No, mngrID(FK + U)]
+
+laboratory_test [#Lab_Code(FK), #Test_Code(FK)]
+
+test [#Code, name, cost, duration]
+
+patient [#ID, full_name, dbirth, phone, gender]
+
+patient_diseases [#PID, #DiseaseID]
+
+chronic_diseases [#ID, name]
+
+patient_test [#PID(FK), #Test_Code(FK), #Lab_Code(FK) time, date]
+
+employee [#ID, name, salary, team, endTime, startTime, mngrID(FK), Lab_code(FK)]
+
+-----------------------------------------------------------------------------------
+Take-away Restaurants:
+
+Branch [#ID, address, contact_no, mgrID(FK + U)]
+
+Staff [#ID, name, age, role, joinDate, salary, city, region, branchID(FK)]
+
+branch_items [#branchID(FK), #itemCode(FK)]
+
+Menu_Items [#Code, name, price, catigory]
+
+Items_in_order [#OrderID(FK), #Item_Code(FK)]
+
+Orders [#ID, address, date, time, bill, customerID(FK), deliveryID(FK)]
+
+customer [#Code, name, contact_no]
+
+delivery [#Code, name, contact_no]
+
+-----------------------------------------------------------------------------------
+International school database system:
+
+student [#serial_no, name, gender, dbirth, email, certificate, className(FK)]
+
+medicalReport [#student_serial(FK), weight, lenght]
+
+student_diseases [#student_serial(FK), #diseaseName]
+
+application [#student_serial(FK), division]
+
+parent [#ID, name, relationship, studentID(FK)]
+
+sibling [#student_1_ID(FK), #student_2_ID(FK), dicount]
+
+teacher [#ID, name, subject, phone, email, salary, headID(FK)]
+
+class_teacher [#teacherID(FK), #className(FK)]
+
+class [#name, build_no, floor_no, schedule, capacity]

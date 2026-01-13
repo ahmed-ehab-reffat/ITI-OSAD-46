@@ -1,0 +1,184 @@
+#include <iostream>
+
+using namespace std;
+class Node {
+public :
+    int data;
+    Node * left ;
+    Node * right ;
+    Node(int data){
+        this->data = data;
+        left=NULL;
+        right=NULL;
+    }
+    ~Node(){
+    }
+};
+class Tree{
+    Node * root; //Pointer of start Element
+    public :
+    Tree(){
+        root=NULL;
+    }
+    void add( int data){
+        //Create Node
+        Node * newNode=new Node(data); //newNode->data=data;
+        // Build Connections
+        // Tree Empty No Root
+        if(root == NULL){
+            root=newNode;
+        }
+        // Tree Empty Not Empty
+        else{
+            Node * current =root; //Jump
+            Node * parent  = NULL; //Jump-1
+            while(current != NULL ){
+                parent=current;//root
+                if(data > current ->data  ){
+                    current=current->right;//
+                }else{
+                    current=current->left; //
+                }
+            }
+            // parent -> left=newNode;
+            // parent -> right=newNode;
+            if(data > parent->data ){
+                parent->right=newNode;
+            }else{
+                parent->left=newNode;
+            }
+
+        }
+    }
+    bool checkDataInTree(int data){
+        if(getNodeByData(data) != NULL){
+            return true;
+        }
+        return false;
+
+    }
+
+    int getParentMain(int data){
+            Node *node=getNodeByData(data);
+            if(node != NULL){
+                Node *parent=getParent(node);
+                if(parent != NULL){
+                    return parent->data;
+                }else{
+                    return -1; // root
+                }
+            }else{
+                return -5;//NotFound
+            }
+
+    }
+
+    int getMaxRightMain(int data){
+        Node *node=getNodeByData(data);
+        if(node != NULL){
+            Node *maxRight=getMaxRight(node);
+            return maxRight->data;
+        }
+        return -1;
+    }
+
+
+
+    private:
+
+    Node * getMaxRight(Node * current ){
+        if(current == NULL){
+            return NULL;
+        }
+        while(current ->right != NULL){
+            current =current ->right;
+        }
+        return current;
+
+    }
+
+    Node * getParent(Node * current ){
+        //Node * current =getNodeByData(data);
+        //current = root;
+        if(current == root){
+            return NULL;
+        }
+        if(current != NULL){
+            Node * parent = root;
+            while (parent != NULL ){
+                if(parent->left == current || parent->right == current){
+                    return parent;
+                }else{
+                    //JUMP
+                    if(current->data > parent->data){
+                        parent=parent->right;
+                    }else{
+                        parent=parent->left;
+                    }
+                }
+            }
+
+        }
+         return NULL;
+
+    }
+    //Search
+    Node * getNodeByData(int data){
+        Node * current =root; //Jump
+        while(current != NULL ){
+            if(data ==current ->data ){
+                return current ;
+            }
+            else if(data>current->data){
+                current=current->right;
+            }
+            else{
+                current=current->left;
+            }
+        }
+        return NULL;
+    }
+};
+int main()
+{
+    Tree t;
+    t.add(50);
+    t.add(40);
+    t.add(30);
+    t.add(60);
+    t.add(70);
+    t.add(65);
+    t.add(25);
+    //t.add(45);
+    //t.add(47);
+    //t.add(48);
+    //t.add(49);
+    /*
+    t.getNodeByData(50)!=NULL? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.getNodeByData(45)!=NULL? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.getNodeByData(65)!=NULL? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.getNodeByData(60)!=NULL? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.getNodeByData(21)!=NULL? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.getNodeByData(23)!=NULL? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    */
+    t.checkDataInTree(50)!=false? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.checkDataInTree(45)!=false? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.checkDataInTree(65)!=false? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.checkDataInTree(60)!=false? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.checkDataInTree(21)!=false? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    t.checkDataInTree(23)!=false? cout<<"Found"<<endl :cout<<"Not Found"<<endl;
+    int parent = t.getParentMain(21);
+    parent == -1 ? cout<<"Root"<<endl: parent == -5 ? cout<<"<<Not Found>>"<<endl:cout<<"Parent = "<<parent<<endl;
+    parent = t.getParentMain(50);//root
+    parent == -1 ? cout<<"Root"<<endl: parent == -5 ? cout<<"<<Not Found>>"<<endl:cout<<"Parent = "<<parent<<endl;
+    parent = t.getParentMain(65);//70
+    parent == -1 ? cout<<"Root"<<endl: parent == -5 ? cout<<"<<Not Found>>"<<endl:cout<<"Parent = "<<parent<<endl;
+    parent = t.getParentMain(45);//40
+    parent == -1 ? cout<<"Root"<<endl: parent == -5 ? cout<<"<<Not Found>>"<<endl:cout<<"Parent = "<<parent<<endl;
+
+    cout<<"Max Right : "<<t.getMaxRightMain(40)<<endl;
+
+
+    cout << "Hello world!" << endl;
+    return 0;
+}

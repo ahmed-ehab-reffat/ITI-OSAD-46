@@ -1,0 +1,73 @@
+-- db views
+-- index
+-- ----
+-- Normalization : db design tuning 
+-- -------------- DB Views ----------------------------
+-- db view : select statement stored in the db as an object
+-- how to create view
+create or replace view emps_depts_view
+as
+select employee_id, last_name, salary, email, hire_date, 
+	employees.department_id, department_name
+from employees, departments
+where employees.department_id = departments.department_id;
+
+-- calling view
+select employee_id, last_name, email, department_id
+from emps_depts_view
+where department_id = 90;
+
+-- + ve
+-- 1. reusability 
+-- 2. make complex queries easy 
+-- 3. performance [ No +ve or -ve performance on using the view - it is about the same as the original SELECT. ]
+-- 4. security ****
+
+-- Views Types  المتعارف عليه 
+-- 1. Simple View [ from 1 table, no functions, no group by : Allow DMLs ]
+-- 2. Complex View [ from more than 1 table, may contain functions, may contain group by,
+--   				cannot have dmls ]
+
+create or replace view simple_vu20
+as select * from employees
+where department_id = 20
+with check option;
+-- with read only;
+
+update simple_vu20
+set salary = salary + 1000;
+
+update simple_vu20
+set department_id = 30;
+
+-- ### views types
+-- 	[ Standard View -  Materialized View ( store data ) used in data warehouse ] 
+
+
+
+
+-- -------- ########### DB index ##### الفهرسة ################ ----------------
+-- To Speed up retrieve of data during select, join
+-- db index [ Object stored in the db ( on a column ) in a table
+/*
+    1. Hardware [ server, Memory, spu ... ]
+    2. Networking [ fiber .. bandwidth .. ] 
+    3. software [ application issues - Nested Loops .. Alogrithms .. 
+     change app scenario  ]  
+	4. Database [ dba ] [ db index ] 	
+*/
+select *
+from employees
+where department_id = 60;
+
+-- create index on column dept id ( manual index )
+create index my_dept_idx
+on employees(department_id);
+
+-- index Types
+/*
+1- Automatic index
+		- Primary Key ( Clustered Index )
+		- Unique Key
+2- Manual index ( Non Clustered index )
+*/

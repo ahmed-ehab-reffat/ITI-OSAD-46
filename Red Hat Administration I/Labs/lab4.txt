@@ -1,0 +1,51 @@
+1-	ls /bin > /tmp/commands.list
+
+2-	wc -l /tmp/commands.list 
+
+3-	grep ^g /etc/passwd | cut -d : -f1
+
+4-	grep ^g /etc/passwd | cut -d : -f1,5
+
+5-	grep ^g /etc/passwd | cut -d : -f1,5 | sort -t : -k2 > gusers
+
+6-  sudo find / -name .bash_profile
+	ls -R / 2> err | sort > result &
+
+7-	who -q
+
+8-	head -10 /etc/passwd | tail -4
+
+9-	a-	only do the second command (cat filename2)
+	b-	rm: missing operand
+	c-	ls /etc/passwd -> /etc/passwd -> wc-l -> 1 
+
+10-	sleep 100
+
+11-	ctrl+z
+
+12-	jobs
+	bg %1
+	kill -CONT %1
+	jobs
+
+13-	jobs
+
+14-	fg %1
+	ctrl+z
+	bg %1
+	kill -CONT %1
+	jobs
+
+15-	jobs
+	kill %1
+	jobs
+
+16-	ps -f -u ahmed
+
+17- ps -f -u ahmed -N or ps -ef | grep -v ^`whoami`
+
+18- pgrep -u ahmed
+
+19-	pkill -u ahmed
+
+

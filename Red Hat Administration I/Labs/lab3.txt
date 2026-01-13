@@ -1,0 +1,41 @@
+1-	vi mycv
+	i
+	type my information
+	esc
+	:wq
+
+2-	a) j
+	b) k
+	c) /age
+	d) 5G
+	e) dd :5,5d
+	f) A
+
+3-	cat /etc/shells
+
+4-	env
+
+5-  man bash
+
+6-	echo
+
+7-	echo $SHELL
+
+8-	~/.profile - ~/.bash_profile - ~/.bash_login
+
+9-	sudo vi /etc/profile
+	i
+	echo "Welcom to the server $USER. Today is: $(date)"
+	esc
+	:wq
+	
+	vi .bashrc
+	change PS1
+
+10-	backslash is used to escape special characters
+	> is there to continue the command
+	vi .bashrc
+	PS2=:
+
+11- alias ls="ls -l"
+

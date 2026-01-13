@@ -1,0 +1,51 @@
+Question 1
+> 0nf:
+Customers[#Customer_No, CName, Property_No, PAdrress, RentStart, RentFinish, Rent, Owner_No, OName]
+
+-----------------------------
+> 1nf:
+Customers[#Customer_No, CName]
+Customer_Properties[#Customer_No(FK), #Property_No, PAdrress, RentStart, RentFinish, Rent, Owner_No, OName]
+
+-----------------------------
+> 2nf:
+Customers[#Customer_No, CName]
+
+Customer_Properties[#Customer_No(FK), #Property_No(FK), RentStart, RentFinish, Rent]
+Properties[#Property_No, PAdrress, Owner_No, OName]
+
+-----------------------------
+> 3nf:
+Customers[#Customer_No, CName]
+Customer_Properties[#Customer_No(FK), #Property_No(FK), RentStart, RentFinish, Rent]
+
+Properties[#Property_No, PAdrress, Owner_No(FK)]
+Owners[#Owner_No, OName]
+
+-----------------------------
+-----------------------------
+-----------------------------
+
+Question 2
+> 0nf:
+Projects[#Proj_Num, Project_Name, Employee_Num, Employee_Name, Job_Class, CHG_Hour, Hours_Billed]
+
+-----------------------------
+> 1nf:
+Projects[#Proj_Num, Project_Name]
+Projects_Employees[#Proj_Num(FK), #Employee_Num, Employee_Name, Job_Class, CHG_Hour, Hours_Billed]
+
+-----------------------------
+> 2nf:
+Projects[#Proj_Num, Project_Name]
+
+Projects_Employees[#Proj_Num(FK), #Employee_Num(FK), Hours_Billed]
+Employees[#Employee_Num, Employee_Name, Job_Class, CHG_Hour]
+
+-----------------------------
+> 3nf:
+Projects[#Proj_Num, Project_Name]
+Projects_Employees[#Proj_Num(FK), #Employee_Num(FK), Hours_Billed]
+
+Employees[#Employee_Num, Employee_Name, Job_Class(FK)]
+Job_CHG_Hour[#Job_Class, CHG_Hour]

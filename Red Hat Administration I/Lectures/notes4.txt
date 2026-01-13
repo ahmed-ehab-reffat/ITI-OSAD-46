@@ -1,0 +1,83 @@
+zombie process called for a parent process his child closed whithout parent knowing
+orphan process is vice versa
+system will close thies processes
+
+linux process algorithm is round robin plus priority
+
+as a user i cant improve my priority but i can reduce it
+only root can improve priority
+
+ps | ps -l | ps -f | ps -e | ps -en -> show working processes
+pstree -> process tree
+quesion mark in terminal column when run ps -e means this process is deamon
+
+gedit -> open gedit but shell wont work until i close gedit
+gedit & -> open gedit in background
+
+renice 10 -p 6523
+ps -l
+sudo renice -10 -p 6523
+ps -l
+
+nice -n 10 gedit &
+
+signal term wont close process if it is using processor and have a waiting status
+signal kill wii close process even if it is using processors and have a waiting status
+
+kill -l
+man kill (see also signal(7))
+man -s7 signal
+
+jobs -> view process working in background
+
+gedit &
+jobs	-> [1]+ running gedit &
+kill -STOP %1	(1 is job id)
+jobs	-> stopped
+kill -CONT %1
+jobs	-> running
+
+fg %1	-> made the process with job id 1 work in foreground
+bg %1	-> made the process with job id 1 work in background
+
+i can stop process in foreground by ctrl+z and kill it by ctrl+c
+
+pkill -> kills by name not by id so it can kill multiple process that have same name
+
+top -> in terminal task manager
+assignment: sort top by memory not processor
+assignmint: make top refresh every 30 second and close after 2 min
+
+pgrep -l system
+pgrep -xl systemd
+pgrep -lu ahmed
+
+Command > fname		-> save output in fname (create if not exist)
+Command >> fname	-> add output to the content of fname content
+Command < fname		
+
+ls /etc ffrg > f1	-> error on screen and data in f1
+ls /etc ffrg 2> f1	-> data on screen and error in f1
+
+0 for iput
+1 for output
+2 for error
+default:	1>    0<
+
+wc /etc/passwd -> number of lines and bytes
+wc -> let you type text -> end with ctrl+d -> apply wc to text
+
+grep bash$ /etc/passwd | wc -l
+
+tr a A < f1
+
+cut -d: -f1,5,6 /etc/passwd | more
+
+sort -k4 -t: -n /etc/passwd | more
+
+env var & aleias & kill signals -> all caps
+
+
+
+
+
