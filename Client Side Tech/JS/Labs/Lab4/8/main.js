@@ -11,7 +11,7 @@ const emailErrorSpan = document.getElementById("emailError");
 
 function submitForm() {
   if (isValidForm()) {
-    addRowToTable();
+    addRow();
     resetForm();
   }
 }
@@ -44,7 +44,7 @@ function isValidForm() {
   if (emailVal === "") {
     emailErrorSpan.textContent = "Email is required.";
     isValid = false;
-  } else if (!isValidEmailFormat(emailVal)) {
+  } else if (!isValidEmail(emailVal)) {
     emailErrorSpan.textContent = "Please enter a valid email format.";
     isValid = false;
   }
@@ -52,7 +52,7 @@ function isValidForm() {
   return isValid;
 }
 
-function addRowToTable() {
+function addRow() {
   const row = document.createElement("tr");
 
   const nameCell = document.createElement("td");
@@ -82,7 +82,7 @@ function clearErrors() {
   emailErrorSpan.textContent = "";
 }
 
-function isValidEmailFormat(email) {
+function isValidEmail(email) {
   const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return re.test(email);
 }
