@@ -1,0 +1,34 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  padding: 15px;
+  background-color: #e6d0d0;
+}
+
+ul.tabs {
+  list-style: none;
+  margin-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul.tabs li {
+  background-color: #eee;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+ul.tabs li.active,
+ul.tabs li:hover {
+  background-color: #bbb;
+}
+
+.content p {
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+}
