@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<library>
+  <location>Giza, Haram</location>
+  <description>Egyptian library</description>
+  <librarian>Ahmed Ehab Ahmed</librarian>
+  <books>
+    <book>
+      <ISBN>1234</ISBN>
+      <author>Ahmed Ehab Ahmed</author>
+      <title>XML and JSON</title>
+      <preface>This is a classic tale of adventure.</preface>
+      <parts>
+        <part>
+          <title>The Journey Begins</title>
+          <chapters>
+            <chapter>
+              <title>Departure</title>
+              <summary>The hero leaves home.</summary>
+              <section>
+                <content>
+                  <![CDATA[
+                    The ship sailed at dawn. It was a cold & misty morning. 
+                    The crew whispered, "Will we ever return?"
+                    ]]>
+                </content>
+              </section>
+            </chapter>
+            <chapter>
+              <title>The Storm</title>
+              <summary>A great storm hits the fleet.</summary>
+              <sections>
+                <section>
+                  <content>
+                    <![CDATA[
+                      Thunder rolled across the dark skies.
+                      ]]>
+                  </content>
+                  <p>paragraph1</p>
+                </section>
+              </sections>
+            </chapter>
+          </chapters>
+        </part>
+      </parts>
+    </book>
+    <book>
+      <ISBN>5678</ISBN>
+      <author>Jane Smith</author>
+      <title>XML Mastery</title>
+      <preface>Learning data structures.</preface>
+      <parts>
+        <part>
+          <title>Basics</title>
+          <chapters>
+            <chapter>
+              <title>Introduction</title>
+              <summary>Brief overview of tags.</summary>
+              <sections>
+                <section>
+                  <content>
+                    <![CDATA[
+                      XML stands for eXtensible Markup Language.
+                      ]]>
+                  </content>
+                </section>
+              </sections>
+            </chapter>
+          </chapters>
+        </part>
+      </parts>
+    </book>
+  </books>
+
+</library>

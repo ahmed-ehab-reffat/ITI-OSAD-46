@@ -1,0 +1,63 @@
+{
+  "library": {
+    "location": "Giza, Haram",
+    "description": "Egyptian library",
+    "librarian": "Ahmed Ehab Ahmed",
+    "books": [
+      {
+        "ISBN": "1234",
+        "author": "Ahmed Ehab Ahmed",
+        "title": "XML and JSON",
+        "preface": "This is a classic tale of adventure.",
+        "parts": [
+          {
+            "title": "The Journey Begins",
+            "chapters": [
+              {
+                "title": "Departure",
+                "summary": "The hero leaves home.",
+                "sections": [
+                  {
+                    "content": "The ship sailed at dawn. It was a cold & misty morning. \n                    The crew whispered, \"Will we ever return?\""
+                  }
+                ]
+              },
+              {
+                "title": "The Storm",
+                "summary": "A great storm hits the fleet.",
+                "sections": [
+                  {
+                    "content": "Thunder rolled across the dark skies.",
+                    "p": "paragraph1"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "ISBN": "5678",
+        "author": "Jane Smith",
+        "title": "XML Mastery",
+        "preface": "Learning data structures.",
+        "parts": [
+          {
+            "title": "Basics",
+            "chapters": [
+              {
+                "title": "Introduction",
+                "summary": "Brief overview of tags.",
+                "sections": [
+                  {
+                    "content": "XML stands for eXtensible Markup Language."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
