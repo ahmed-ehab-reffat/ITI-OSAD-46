@@ -1,0 +1,25 @@
+MongoDB Lab1
+1- Install mongodb server and mongosh client
+2- Add mongo DB folder to your system variables path
+Go to -> Edit System environment variables -> Environment varaibles->
+inside system variables choose path and add “C:\Program
+Files\MongoDB\Server\4.0\bin” apply and exit.
+3- Open server (on windows shell using command “mongod”);
+4- Open another shell for client using command “mongosh” or noSqlBoost
+Tool
+5- Create database with name ITI  by typing use ITI
+6- start create new collection named instructors and start with following
+inserts
+a- Insert many using array contained with lab folder instructors.txt file.
+b- Insert your own data
+c- Insert instructor without firstName and LastName (mongo will raise an
+error or not ?)
+7- Try the following queries: (all queries should be run using find or findOne)
+a- db.instructors.find({});
+b- db.instructors.find();
+c- db.instructors.findOne();
+d- db.instructors.find().constructor.name
+e- db.instructors.find({}).forEach((document)=>{
+    print(document); })
+f-Now from step e try to display only firstName and lastName for each
+instructor?!
