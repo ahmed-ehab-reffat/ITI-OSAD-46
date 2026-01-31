@@ -1,0 +1,41 @@
+<section id="portfolio" class="py-5">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>Projects</h2>
+      <div>
+        <button class="btn btn-outline-secondary btn-sm me-2" (click)="filter('all')">All</button>
+        <button class="btn btn-outline-secondary btn-sm" (click)="filter('Web')">Web</button>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let p of filtered">
+        <div class="card h-100 project-card" (click)="open(p)">
+          <img [src]="p.image" class="card-img-top" alt="project" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ p.title }}</h5>
+            <p class="card-text text-muted small">{{ p.summary }}</p>
+            <div class="mt-auto">
+              <span class="badge bg-primary me-1">{{ p.type }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-modal" *ngIf="active" (click)="close()">
+      <div class="modal-dialog" (click)="$event.stopPropagation()">
+        <div class="modal-content p-4">
+          <h4>{{ active.title }}</h4>
+          <p class="text-muted">{{ active.summary }}</p>
+          <p>{{ active.description }}</p>
+          <div class="mt-3">
+            <a class="btn btn-primary me-2" [href]="active.live" target="_blank">View Live</a>
+            <a class="btn btn-outline-secondary" [href]="active.repo" target="_blank">Repository</a>
+          </div>
+          <button class="btn btn-outline-dark btn-sm mt-3" (click)="close()">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

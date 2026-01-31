@@ -1,0 +1,6 @@
+.progress-sm {
+  height: 12px;
+}
+.animated-bar {
+  transition: width 1s ease-in-out;
+}
