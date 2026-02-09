@@ -1,0 +1,73 @@
+.gate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  z-index: 9998;
+  pointer-events: none;
+}
+.gate.active {
+  pointer-events: all;
+}
+.left-gate,
+.right-gate {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.left-gate {
+  background-image: url("../../assets/images/frames/gate-left.png");
+  transform: translateX(-100%);
+}
+.right-gate {
+  background-image: url("../../assets/images/frames/gate-right.png");
+  transform: translateX(100%);
+}
+.gate.opening .left-gate {
+  animation: slideLeftOpen 1.7s ease-out forwards;
+}
+.gate.opening .right-gate {
+  animation: slideRightOpen 1.7s ease-out forwards;
+}
+.gate.closing .left-gate {
+  animation: slideLeftClose 1.7s ease-in forwards;
+}
+.gate.closing .right-gate {
+  animation: slideRightClose 1.7s ease-in forwards;
+}
+@keyframes slideLeftOpen {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+@keyframes slideRightOpen {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+@keyframes slideLeftClose {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slideRightClose {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

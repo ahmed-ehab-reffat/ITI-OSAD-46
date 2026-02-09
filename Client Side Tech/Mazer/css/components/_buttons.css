@@ -1,0 +1,55 @@
+.menu-btn {
+  width: 12rem;
+  height: 6rem;
+  background-color: transparent;
+  border: none;
+  background-image: url("../../assets/images/ui-components/button-sprite.png");
+  background-size: 375% 580%;
+  background-position: 5% 50.5%;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-family: var(--font-menu);
+  font-size: var(--fs-lg);
+  color: var(--stone-dark);
+  font-weight: 500;
+}
+.menu-btn:hover {
+  background-position: 50% 50.5%;
+  transform: scale(1.02);
+}
+.menu-btn:active {
+  background-position: 95% 50.5%;
+  color: var(--sand-light);
+  transform: scale(0.98);
+}
+
+.btn-load {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: var(--stone-dark);
+}
+.btn-load:hover:not(:disabled) {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+.btn-delete {
+  background: transparent;
+  color: var(--health-red);
+  border-color: var(--health-red);
+}
+.btn-delete:hover:not(:disabled) {
+  background: var(--health-red);
+  color: var(--papyrus);
+}
+.slot-actions button {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  font-family: var(--font-display);
+  font-size: var(--fs-sm);
+  border: 1px solid var(--gold-dark);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+.slot-actions button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}

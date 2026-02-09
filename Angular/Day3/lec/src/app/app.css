@@ -1,0 +1,21 @@
+.admin {
+  color: red;
+  font-weight: bold;
+}
+
+.user {
+  color: green;
+  font-weight: bold;
+}
+
+img {
+  margin: 10px 0;
+}
+
+button {
+  margin: 5px 0;
+}
+.active {
+  font-weight: bold;
+  color: red;
+}

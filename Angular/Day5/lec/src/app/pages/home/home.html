@@ -1,0 +1,21 @@
+<h2>Home Page</h2>
+
+
+<h2>Signal Example</h2>
+
+<p>Counter: {{ counter() }}</p>
+
+<button (click)="increment()">+</button>
+<h2>Home - Products</h2>
+
+@if (products.length === 0) {
+  <p>Loading...</p>
+}
+
+@for (product of products; track $index) {
+  <div style="border:1px solid #ccc; padding:10px; margin:10px;">
+    <h4>{{ product.title }}</h4>
+    <img [src]="product.image" width="80" />
+    <p>Price: {{ product.price }} $</p>
+  </div>
+}

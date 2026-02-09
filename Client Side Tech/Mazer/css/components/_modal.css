@@ -1,0 +1,112 @@
+dialog::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+dialog .menu-btn {
+  width: 11rem;
+  height: 5rem;
+}
+.modal {
+  max-height: calc(100% - 1.3rem);
+  padding: 1.3rem 4rem;
+  background-image:
+    linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.6)),
+    url("../../assets/images/frames/pause-overlay.png");
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: var(--radius-xl);
+  border: 3px solid var(--tomb);
+  border-bottom-width: 9px;
+}
+#pause-menu {
+  max-width: 30rem;
+}
+#pause-menu .main-title {
+  margin-bottom: var(--spacing-md);
+  font-size: var(--fs-3xl);
+}
+#pause-menu .buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+#confirmation-modal {
+  width: 40rem;
+  padding: 4rem 0;
+  background-image: url("../../assets/images/frames/modal.png");
+  background-position: center;
+  background-size: 145% 147%;
+  border-radius: var(--spacing-lg);
+  position: absolute;
+  top: 51%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#confirmation-modal img {
+  width: 40rem;
+}
+#confirmation-modal content {
+  position: absolute;
+}
+#confirmation-modal .modal-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-2xl);
+  font-weight: normal;
+  color: var(--gold);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  text-align: center;
+  margin-bottom: var(--spacing-lg);
+}
+#confirmation-modal .modal-message {
+  font-family: var(--font-body);
+  font-size: var(--fs-lg);
+  color: var(--sand);
+  text-align: center;
+  max-width: 80%;
+  line-height: 1.4;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--spacing-2xl);
+}
+#confirmation-modal .buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#rules {
+  min-width: 45rem;
+  color: white;
+  font-weight: bold;
+  font-family: var(--font-body);
+  padding: 2rem 2.5rem;
+}
+#rules .main-title {
+  font-size: var(--fs-3xl);
+  text-wrap: nowrap;
+  margin-bottom: var(--spacing-sm);
+}
+#rules h3 {
+  color: var(--gold);
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
+}
+#rules p {
+  margin-bottom: var(--spacing-md);
+}
+#rules li {
+  margin-left: var(--spacing-xl);
+}
+#rules .flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+#rules .menu-btn {
+  width: 10rem;
+  height: 4.5rem;
+}

@@ -1,0 +1,12 @@
+.home {
+  background-image: url("../../assets/images/frames/home.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.home .buttons {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--spacing-lg);
+  gap: var(--spacing-md);
+}

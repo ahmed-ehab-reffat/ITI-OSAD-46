@@ -1,0 +1,15 @@
+<h2>Dashboard</h2>
+
+@if (isAdmin) {
+  <p>Welcome Admin 👑</p>
+} @else {
+  <p>Welcome User</p>
+}
+
+<hr />
+
+<h3>Users List</h3>
+
+@for (user of users; track $index) {
+  <p>{{ user.name }} - {{ user.role }}</p>
+}

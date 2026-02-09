@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" type="image/png" href="./assets/images/favicon.png" />
+    <title>Mazer</title>
+  </head>
+  <body>
+    <dialog id="pause-menu" class="modal">
+      <h2 class="main-title">pause</h2>
+      <menu class="buttons">
+        <button onClick="onResume()" class="menu-btn">Resume</button>
+        <button onClick="onRestart()" class="menu-btn">Restart</button>
+        <button onClick="onSave()" class="menu-btn">Save</button>
+        <button onClick="onQuit()" class="menu-btn">Quit</button>
+      </menu>
+    </dialog>
+    <dialog id="confirmation-modal">
+      <h2 class="modal-title">Confirmation</h2>
+      <p class="modal-message">Are you sure you want to delete this save?</p>
+      <menu class="buttons">
+        <button id="confirmation-modal-yes" class="menu-btn">Yes</button>
+        <button id="confirmation-modal-no" class="menu-btn">No</button>
+      </menu>
+    </dialog>
+    <dialog id="rules" class="modal">
+      <h2 class="main-title">𓂀 rules 𓂀</h2>
+      <p>
+        Welcome, Explorer! You have entered the ancient burial chambers of a
+        lost king. The air is heavy, the walls are shifting, and you aren’t
+        alone. Do you have what it takes to find the exit, or will you become
+        just another resident of the tomb?
+      </p>
+      <h3>objective</h3>
+      <p>
+        Your goal is simple but dangerous: Find the exit door and escape. The
+        door is sealed by ancient magic and can only be opened once you have
+        collected all the Hidden Keys scattered throughout the maze.
+      </p>
+      <div class="flex">
+        <div>
+          <h3>how to play</h3>
+          <ol>
+            <li>Up Arrow (↑): Move Forward / North</li>
+            <li>Down Arrow (↓): Move Backward / South</li>
+            <li>Left Arrow (←): Turn Left / West</li>
+            <li>Right Arrow (→): Turn Right / East</li>
+            <li>Escape (Esc): Pause Game</li>
+          </ol>
+        </div>
+        <button id="btn-rules-close" class="menu-btn">OK</button>
+      </div>
+    </dialog>
+    <div class="gate">
+      <div class="left-gate"></div>
+      <div class="right-gate"></div>
+    </div>
+    <section class="screen mobile-warning loading-screen">
+      <div class="scrolling-content">
+        <div class="hiero">
+          𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁚𓁛𓁜𓁝𓁞𓁟𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁪𓁫𓁬𓁭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁚𓁛𓁜𓁝𓁞𓁟𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁪𓁫𓁬𓁭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁚𓁛𓁜𓁝𓁞𓁟𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁪𓁫𓁬𓁭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁚𓁛𓁜𓁝𓁞𓁟𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁪𓁫𓁬𓁭𓁮𓁯𓁰𓁱𓁲
+        </div>
+        <div class="hiero" aria-hidden="true">
+          𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁚𓁛𓁜𓁝𓁞𓁟𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁪𓁫𓁬𓁭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁚𓁛𓁜𓁝𓁞𓁟𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁪𓁫𓁬𓁭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓀊𓀋𓀌𓀍𓀎𓀏𓀐𓀑𓀒𓀓𓀔𓀕𓀖𓀗𓀘𓀙𓀚𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁚𓁛𓁜𓁝𓁞𓁟𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁪𓁫𓁬𓁭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀛𓀜𓀝𓀞𓀟𓀠𓀡𓀢𓀣𓀤𓀥𓀦𓀧𓀨𓀩𓀪𓀫𓀬𓀭𓁮𓁯𓁰𓁱𓁲𓁳𓁴𓁵𓁶𓁷𓀮𓀯𓀰𓀱𓀲𓀳𓀴𓀵𓀶𓀷𓀸𓀹𓀺𓀻𓀼𓀽𓀾𓀿𓁀𓁁𓁂𓁃𓁄𓁅𓁆𓁇𓁈𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓀀𓀁𓀂𓀃𓀄𓀅𓀆𓀇𓀈𓀉𓁉𓁊𓁋𓁌𓁍𓁎𓁏𓁐𓁑𓁒𓁓𓁔𓁕𓁖𓁗𓁘𓁙𓁚𓁛𓁜𓁝𓁞𓁟𓁠𓁡𓁢𓁣𓁤𓁥𓁦𓁧𓁨𓁩𓁪𓁫𓁬𓁭𓁮𓁯𓁰𓁱𓁲
+        </div>
+      </div>
+      <div class="loading-content">
+        <div class="loading-icon">𓂀</div>
+        <p class="loading-text">Use With Desktop Screen</p>
+      </div>
+    </section>
+    <section class="screen home active">
+      <h2 class="main-title">Mazer</h2>
+      <menu class="buttons">
+        <button class="menu-btn" id="btn-new-game">New Game</button>
+        <button class="menu-btn" id="btn-load-game">Load Game</button>
+        <button class="menu-btn" id="btn-settings">Settings</button>
+        <button class="menu-btn" id="btn-rules">Rules</button>
+      </menu>
+    </section>
+    <section class="screen load-game">
+      <div class="load-game-container">
+        <h2 class="main-title">Load Game</h2>
+        <table class="save-table">
+          <thead class="save-row">
+            <tr>
+              <th>Slot</th>
+              <th>Level</th>
+              <th>Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="save-row" data-slot="1">
+              <td class="slot-name">Slot 1</td>
+              <td class="slot-level">-</td>
+              <td class="slot-date">Empty</td>
+              <td class="slot-actions">
+                <button class="btn-load" disabled>Load</button>
+                <button class="btn-delete" disabled>Delete</button>
+              </td>
+            </tr>
+            <tr class="save-row" data-slot="2">
+              <td class="slot-name">Slot 2</td>
+              <td class="slot-level">-</td>
+              <td class="slot-date">Empty</td>
+              <td class="slot-actions">
+                <button class="btn-load" disabled>Load</button>
+                <button class="btn-delete" disabled>Delete</button>
+              </td>
+            </tr>
+            <tr class="save-row" data-slot="3">
+              <td class="slot-name">Slot 3</td>
+              <td class="slot-level">-</td>
+              <td class="slot-date">Empty</td>
+              <td class="slot-actions">
+                <button class="btn-load" disabled>Load</button>
+                <button class="btn-delete" disabled>Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="menu-btn" id="btn-back">Back</button>
+      </div>
+    </section>
+    <section class="screen settings">
+      <div class="settings-container">
+        <h2 class="main-title">Settings</h2>
+        <div class="settings-list">
+          <div class="setting-item">
+            <span class="setting-label">Music</span>
+            <label class="toggle">
+              <input type="checkbox" id="toggle-music" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+          <div class="setting-item">
+            <span class="setting-label">Sound Effects</span>
+            <label class="toggle">
+              <input type="checkbox" id="toggle-sfx" checked />
+              <span class="toggle-slider"></span>
+            </label>
+          </div>
+        </div>
+        <button class="menu-btn" id="btn-settings-back">Back</button>
+      </div>
+    </section>
+    <section class="screen win-screen">
+      <button class="menu-btn btn-home" id="btn-win-home">Home</button>
+      <button class="menu-btn btn-new-game" id="btn-win-new-game">
+        New Game
+      </button>
+    </section>
+    <section class="screen lose-screen">
+      <button class="menu-btn btn-home" id="btn-lose-home">Home</button>
+      <button class="menu-btn btn-new-game" id="btn-lose-new-game">
+        Retry
+      </button>
+    </section>
+    <section class="screen game">
+      <div class="game-arena">
+        <div class="playground">
+          <div class="hud">
+            <div class="hud-item heart-hud">
+              <span class="hud-content">❤️❤️❤️</span>
+            </div>
+            <div class="hud-item key-hud">
+              <span class="hud-content">🔑 0/3</span>
+            </div>
+            <div class="hud-item timer-hud">
+              <span class="hud-content">00:00</span>
+            </div>
+            <div class="hud-item level-hud">
+              <span class="hud-content">Level 1</span>
+            </div>
+          </div>
+          <div class="game-canvas-container">
+            <canvas id="canvas" width="1180px" height="510px"></canvas>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script type="module" src="./js/navigation.js"></script>
+    <script type="module" src="./js/core/Game.js"></script>
+  </body>
+</html>
