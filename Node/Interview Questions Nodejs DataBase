@@ -1,0 +1,123 @@
+Node js 
+==================================
+- Node.js runtime fundamentals , singleThread
+- Event loop, callbacks, async/await ,
+- CommonJS vs ES Modules
+- npm/yarn basics
+- Understanding package.json
+- Streams and buffers
+- Node.js internal modules (fs, path, os, etc.)
+- Node.js Process (process.env ...)
+- Event emitter
+- Child processes & clusters
+- process.nextTick() and setImmediate()
+- Rate limiting and throttling
+
+APIs & HTTP
+==================
+- HTTP and Req /Responce Cycle 
+- HTTP methods (GET, POST, etc.)
+- Status codes
+- RESTful principles
+- JSON
+
+- Express.js
+================== 
+- Building REST APIs with Express.js
+- Middleware basics
+- Route handling
+- Request and response objects
+- Basic error handling
+- proxy server with Express.js
+- session and cookies in an Express.js application
+- Advanced middleware usage
+- Request validation (Joi, express-validator)
+- Authentication/Authorization (JWT, OAuth)
+- File uploads (Multer)
+
+DataBase :- 
+==================
+SQL 
+	- Schema design and relationships
+	- CRUD operations (Create, Read, Update, Delete)
+	- Basic SQL syntax (SELECT, INSERT, UPDATE, DELETE)
+	- Data types (INT, VARCHAR, DATE, etc.)
+	- Basic constraints (NOT NULL, UNIQUE, DEFAULT)
+	- Filtering with WHERE, ORDER BY, LIMIT	
+	- Primary keys and foreign keys
+	- JOINS & types
+	- Subqueries and Common Table Expressions (CTEs)
+
+
+	- Aggregate functions (COUNT, SUM, GROUP BY) 
+	- Normalization and denormalization
+	- Transactions and ACID properties
+	- Indexes: types and when to use
+	- Views and materialized views
+	- Stored procedures and triggers
+	- Indexing and query optimization
+	- ORMs (Sequelize, TypeORM)
+	- Transactions (MongoDB/SQL)
+	- Normalization and denormalization
+	- Index tuning and covering indexes
+	- Deadlocks and race conditions
+	- Advanced transaction isolation levels (Read Committed, Serializable)
+	- High-availability setups (replication, failover)
+	- Data partitioning and sharding  (PostgreSQL/MySQL)
+	- Security (GRANT/REVOKE, roles, SQL injection prevention)
+MongoDB 
+- Relational vs Non-Relational databases (SQL VS No SQL)
+- What's Document , collection
+- JSON/BSON data format
+- Mongoose (ODM Library )
+- _id field in MongoDB
+- Schema design for embedded vs referenced documents
+- Aggregation pipeline ($match, $group, $project, etc.)
+- Projections and update operators ($set, $inc, etc.)
+- Indexes in MongoDB
+- Index types (text, multikey, hashed)
+- Compound indexes and performance
+- Query optimization using indexes
+- Basic data modeling patterns (bucket, subset, computed)
+- Sharding and replication strategies
+- Basic data modeling patterns (bucket, subset, computed)
+- Performance profiling with explain()
+- Sharding and replication strategies
+- Write concerns and read preferences
+- TTL indexes and background data cleanup
+- Schema validation and versioning
+- Security and access control (roles, users, encryption)
+- Designing for high throughput (capped collections, bulk writes)
+- Migration strategies between schema versions or from SQL to MongoDB
+==========================================
+System Design & Architecture :- 
+====================================
+- MVC and layered architecture
+- Dependency injection
+- Service and repository patterns
+- performance optimization 
+- How do you handle load balancing and horizontal scaling
+- Caching strategies (Redis)
+- Memory leaks and profiling
+- Worker threads and multithreading
+- Custom streams
+- Microservices vs monolith
+- API Gateway design
+- Event-driven architecture (kafka,Rabbit MQ)
+- service-oriented architecture (SOA)
+===============================================
+Security :- 
+- How handle security in a Node.js application
+- securely store user passwords
+- handle sensitive data in logs and configs
+- HTTPS , CORS
+- OWASP Top 10 for APIs
+- CSRF, XSS, SQL Injection prevention
+- CSP and how it prevents from attack
+===============================================
+DevOps & Scaling
+==================
+Docker + Kubernetes fundamentals
+Load balancing, reverse proxy (Nginx)
+Monitoring (Prometheus, Grafana)
+Blue-green deployments

@@ -1,0 +1,24 @@
+{
+  "name": "lab4",
+  "type": "commonjs",
+  "version": "1.0.0",
+  "description": "",
+  "author": "Ahmed Ehab",
+  "license": "ISC",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --inspect --watch index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "express": "^5.2.1",
+    "mongoose": "^9.2.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^7.4.3",
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11"
+  }
+}

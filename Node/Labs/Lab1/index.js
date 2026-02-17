@@ -1,32 +1,31 @@
 const fs = require("fs");
 const path = require("path");
 
-const inventoryPath = path.join(__dirname, "inventory.json");
+const inventoryPath = path.join(__dirname, "../inventory.json");
 let inventory = JSON.parse(fs.readFileSync(inventoryPath, "utf-8"));
+
+const commands = {
+  add,
+  destock,
+  restock,
+  edit,
+  remove,
+  list,
+  summary,
+  default: () => console.log("Not a valid command"),
+};
 
 const [, , command] = process.argv;
 
-if (command === "add") {
-  add();
-} else if (command === "destock") {
-  destock();
-} else if (command === "restock") {
-  restock();
-} else if (command === "edit") {
-  edit();
-} else if (command === "remove") {
-  remove();
-} else if (command === "list") {
-  list();
-} else if (command === "summary") {
-  summary();
-}
+const targetCmd = commands[command] || commands.default;
+targetCmd();
 
-function save(inventory) {
+function save() {
   fs.writeFileSync(inventoryPath, JSON.stringify(inventory));
 }
 
 function isValidNumber(value) {
+  value = Number(value);
   return value && !isNaN(value) && value > 0;
 }
 
@@ -35,16 +34,16 @@ function isValidString(value) {
 }
 
 function generateId() {
-  const length = inventory.length;
-  if (length === 0) {
+  if (inventory.length === 0) {
     return 1;
   }
 
-  const lastId = inventory[length - 1].id;
+  const lastId = inventory.at(-1).id;
   return lastId + 1;
 }
 
 function getItem(id) {
+  id = Number(id);
   return inventory.find((item) => item.id === id);
 }
 
@@ -61,24 +60,23 @@ function getStatus(item) {
 }
 
 function add() {
-  const [, , , value] = process.argv;
+  const [, , , name] = process.argv;
 
-  if (!isValidString(value)) {
+  if (!isValidString(name)) {
     console.log("Not a valid name.");
     return;
   }
 
-  const id = generateId();
   const item = {
-    id,
-    value,
+    id: generateId(),
+    name: name.trim(),
     quantity: 1,
     category: "General",
   };
 
   inventory.push(item);
 
-  save(inventory);
+  save();
 }
 
 function destock() {
@@ -105,7 +103,7 @@ function destock() {
 
   item.quantity -= amount;
 
-  save(inventory);
+  save();
 }
 
 function restock() {
@@ -127,11 +125,11 @@ function restock() {
 
   item.quantity += amount;
 
-  save(inventory);
+  save();
 }
 
 function edit() {
-  let [, , , id, value] = process.argv;
+  let [, , , id, name] = process.argv;
   id = Number(id);
 
   if (!isValidNumber(id)) {
@@ -139,7 +137,7 @@ function edit() {
     return;
   }
 
-  if (!isValidString(value)) {
+  if (!isValidString(name)) {
     console.log("Not a valid name.");
     return;
   }
@@ -151,9 +149,9 @@ function edit() {
     return;
   }
 
-  item.value = value;
+  item.name = name;
 
-  save(inventory);
+  save();
 }
 
 function remove() {
@@ -167,7 +165,7 @@ function remove() {
 
   inventory = inventory.filter((item) => item.id !== id);
 
-  save(inventory);
+  save();
 }
 
 function list() {
@@ -175,7 +173,7 @@ function list() {
     let status = getStatus(item);
 
     console.log("ID:", item.id);
-    console.log("Value:", item.value);
+    console.log("Name:", item.name);
     console.log("Quantity:", item.quantity);
     console.log("Category:", item.category);
     console.log("Status:", status);

@@ -1,0 +1,17 @@
+html
+  head
+    title Inventory
+    link(rel='stylesheet', href='/styles/home.css')
+  body
+    h1 Inventory
+    table
+      tr
+        th Name
+        th Quantity
+        th Category
+      each item in inventory
+        tr
+          td= item.name
+          td= item.quantity
+          td= item.category
+    img(src="/images/galaxy.jpg" alt="galaxy")
