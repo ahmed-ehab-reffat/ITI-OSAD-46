@@ -25,6 +25,8 @@ app.use((err, req, res, next) => {
   res.status(501).json({error: err.message});
 });
 
+module.exports = app;
+
 const PORT = process.env.PORT || '3000';
 
 app.listen(PORT, (error) => {

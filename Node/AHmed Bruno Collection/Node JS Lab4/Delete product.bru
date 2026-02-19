@@ -1,0 +1,26 @@
+meta {
+  name: Delete product
+  type: http
+  seq: 7
+}
+
+delete {
+  url: http://localhost:3000/products/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 6991e7113d0fecf4f7bc92f5
+}
+
+body:json {
+  {
+    "userId": "6991e6f83d0fecf4f7bc92f3"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

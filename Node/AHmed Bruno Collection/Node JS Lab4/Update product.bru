@@ -1,0 +1,27 @@
+meta {
+  name: Update product
+  type: http
+  seq: 6
+}
+
+patch {
+  url: http://localhost:3000/products/:id
+  body: json
+  auth: inherit
+}
+
+params:path {
+  id: 6994ea4d83bc3d345fb5f8a0
+}
+
+body:json {
+  {
+    "userId": "6994e9d683bc3d345fb5f899",
+    "name": "laptop"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
