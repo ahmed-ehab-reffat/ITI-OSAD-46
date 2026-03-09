@@ -1,0 +1,7 @@
+FROM nginx
+
+RUN echo "Hello, OS46!" >/usr/share/nginx/html/index.html
+
+COPY default.conf /etc/nginx/conf.d/default.conf
+
+EXPOSE 8080
