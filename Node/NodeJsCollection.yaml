@@ -1,0 +1,377 @@
+openapi: 3.0.0
+info:
+  title: NodeJsCollection
+  version: 1.0.0
+paths:
+  /products/{id}:
+    delete:
+      summary: Delete product
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_delete_product_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+          example: 6991e7113d0fecf4f7bc92f5
+      requestBody:
+        $ref: '#/components/requestBodies/delete_product'
+    get:
+      summary: get product by ID
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab3_get_product_by_id_bru
+      description: ''
+      tags:
+        - Node JS Lab3
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+    patch:
+      summary: Update product
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_update_product_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+          example: 6994ea4d83bc3d345fb5f8a0
+      requestBody:
+        $ref: '#/components/requestBodies/update_product'
+  /products/2/destock:
+    patch:
+      summary: destock product
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab3_destock_product_bru
+      description: ''
+      tags:
+        - Node JS Lab3
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/destock_product'
+  /products:
+    post:
+      summary: Create product
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_create_product_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/create_product'
+    get:
+      summary: Get filtered products
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_get_filtered_products_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: limit
+          in: query
+          description: ''
+          required: false
+          schema:
+            type: integer
+            format: int32
+          example: '10'
+        - name: skip
+          in: query
+          description: ''
+          required: false
+          schema:
+            type: integer
+            format: int32
+          example: '0'
+        - name: status
+          in: query
+          description: ''
+          required: false
+          schema:
+            type: string
+          example: low stock
+  /products/2/restock:
+    patch:
+      summary: restock product
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab3_restock_product_bru
+      description: ''
+      tags:
+        - Node JS Lab3
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/restock_product'
+  /users:
+    post:
+      summary: Create user
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_create_user_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/create_user'
+    get:
+      summary: Get users
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_get_users_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+  /users/{id}:
+    delete:
+      summary: Delete user
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_delete_user_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+    patch:
+      summary: Update user
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_update_user_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+          example: 6991e6f83d0fecf4f7bc92f3
+      requestBody:
+        $ref: '#/components/requestBodies/update_user'
+  /users/{id}/products:
+    get:
+      summary: Get User Products
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_lab4_get_user_products_bru
+      description: ''
+      tags:
+        - Node JS Lab4
+      responses:
+        '200':
+          description: ''
+      parameters:
+        - name: id
+          in: path
+          description: ''
+          required: true
+          schema:
+            type: string
+          example: 6991e6f83d0fecf4f7bc92f3
+  /api/book:
+    post:
+      summary: Admin Add New Book
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_project_admin_add_new_book_bru
+      description: ''
+      tags:
+        - Node JS Project
+      responses:
+        '200':
+          description: ''
+      requestBody:
+        $ref: '#/components/requestBodies/admin_add_new_book'
+    get:
+      summary: User Get All Books
+      operationId: >-
+        mnt_0844d3e544d3d392_cs_iti_node_ahmed_bruno_collection_node_js_project_user_get_all_books_bru
+      description: ''
+      tags:
+        - Node JS Project
+      responses:
+        '200':
+          description: ''
+servers:
+  - url: http://localhost:3000
+  - url: http://localhost:8888
+components:
+  schemas:
+    destock_product:
+      type: object
+      properties:
+        amount:
+          type: number
+    product:
+      type: object
+      properties:
+        name:
+          type: string
+        quantity:
+          type: number
+        category:
+          type: string
+    restock_product:
+      type: object
+      properties:
+        amount:
+          type: number
+    create_product:
+      type: object
+      properties:
+        owner:
+          type: string
+        name:
+          type: string
+        categories:
+          type: array
+          items:
+            type: string
+          properties:
+            '0':
+              type: string
+        quantity:
+          type: number
+    create_user:
+      type: object
+      properties:
+        username:
+          type: string
+        password:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        dob:
+          type: string
+    delete_product:
+      type: object
+      properties:
+        userId:
+          type: string
+    update_product:
+      type: object
+      properties:
+        userId:
+          type: string
+        name:
+          type: string
+    update_user:
+      type: object
+      properties:
+        password:
+          type: string
+    admin_add_new_book:
+      type: object
+      properties: {}
+  requestBodies:
+    destock_product:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/destock_product'
+      description: ''
+      required: true
+    product:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/product'
+      description: ''
+      required: true
+    restock_product:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/restock_product'
+      description: ''
+      required: true
+    create_product:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/create_product'
+      description: ''
+      required: true
+    create_user:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/create_user'
+      description: ''
+      required: true
+    delete_product:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/delete_product'
+      description: ''
+      required: true
+    update_product:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/update_product'
+      description: ''
+      required: true
+    update_user:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/update_user'
+      description: ''
+      required: true
+    admin_add_new_book:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/admin_add_new_book'
+      description: ''
+      required: true
+  securitySchemes: {}

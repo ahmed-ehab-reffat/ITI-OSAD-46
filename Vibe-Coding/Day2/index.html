@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OpenAI Chat — Text & Image</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">OpenAI Chat</div>
+      <div class="modes">
+        <button id="mode-text" class="mode active">Text</button>
+        <button id="mode-image" class="mode">Image</button>
+      </div>
+
+      <label class="label">Model (Text)</label>
+      <select id="model-select">
+        <option value="gpt-5-mini">gpt-5-mini</option>
+        <option value="gpt-5-nano">gpt-5-nano</option>
+        <option value="o4-mini">o4-mini</option>
+        <option value="gpt-4o-mini">gpt-4o-mini</option>
+        <option value="gpt-4.1-nano">gpt-4.1-nano</option>
+      </select>
+
+      <div class="info">Image mode uses <code>gpt-image-1-mini</code></div>
+      <button id="new-session" class="new-session">New Session</button>
+      <div class="footer">Local history preserved in browser</div>
+    </aside>
+
+    <main class="main">
+      <div class="chat-header">AI Chat</div>
+      <div id="chat" class="chat"></div>
+
+      <form id="composer" class="composer">
+        <textarea id="prompt" placeholder="Type your message or image prompt..." rows="1"></textarea>
+        <button id="send">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>

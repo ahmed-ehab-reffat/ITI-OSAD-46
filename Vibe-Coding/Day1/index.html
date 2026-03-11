@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Visualizer - Sorting & Data Structures</title>
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+  <main>
+    <header class="site-header">
+  <div class="logo" aria-hidden="true"> 
+    <!-- simple inline SVG logo -->
+    <svg width="38" height="38" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" focusable="false">
+      <rect x="1" y="3" width="6" height="18" rx="1" fill="var(--accent)" />
+      <rect x="9" y="7" width="6" height="14" rx="1" fill="rgba(255,255,255,0.08)" />
+      <rect x="17" y="11" width="6" height="10" rx="1" fill="var(--muted)" />
+    </svg>
+  </div>
+  <div class="site-title">
+    <h1>Visualizer</h1>
+    <div class="site-sub">Sorting Algorithms & Data Structures</div>
+  </div>
+</header>
+
+    <section class="controls">
+      <!-- Sorting-specific controls (hidden when Data Structures tab is active) -->
+      <div id="sorting-controls" class="control-row">
+        <label>Algorithm:
+          <span class="select-wrapper">
+            <select id="algorithm-select">
+            <option value="bubble">Bubble Sort</option>
+            <option value="selection">Selection Sort</option>
+            <option value="insertion">Insertion Sort</option>
+            <option value="merge">Merge Sort</option>
+            <option value="quick">Quick Sort</option>
+          </select>
+            <span class="select-arrow" aria-hidden="true">▾</span>
+          </span>
+        </label>
+
+        <label>Size: <input id="size-range" type="range" min="5" max="120" value="40"></label>
+        <label>Speed: <input id="speed-range" type="range" min="1" max="1000" value="800"></label>
+
+        <button id="shuffle-btn">Shuffle</button>
+        <button id="sort-btn">Start</button>
+        <button id="pause-btn" disabled>Pause</button>
+        <button id="terminate-btn" disabled>Terminate</button>
+
+        <label style="margin-left:6px;display:flex;align-items:center;gap:6px">
+          <input id="step-toggle" type="checkbox"> Step Mode
+        </label>
+        <button id="step-back" disabled>&lt; Back</button>
+        <button id="step-next" disabled>Next &gt;</button>
+
+        <button id="sound-toggle" title="Toggle sound">Sound</button>
+        <button id="theme-toggle" title="Toggle light/dark">Theme</button>
+      </div>
+
+      <div class="tabs">
+        <button class="tab active" data-target="sorting">Sorting</button>
+        <button class="tab" data-target="datastructures">Data Structures</button>
+      </div>
+    </section>
+
+    <section id="sorting" class="panel active">
+      <div id="visualizer" class="visualizer"></div>
+    </section>
+
+    <section id="datastructures" class="panel">
+      <div class="ds-controls">
+        <button id="ds-stack">Stack</button>
+        <button id="ds-queue">Queue</button>
+        <button id="ds-linkedlist">Linked List</button>
+      </div>
+      <div id="ds-visualizer" class="ds-visualizer"></div>
+    </section>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div>Made with ♥ — Sorting & DS Visualizer</div>
+        <div class="footer-links">
+          <a href="#">Docs</a> · <a href="#">Source</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
