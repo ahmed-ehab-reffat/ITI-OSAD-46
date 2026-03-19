@@ -1,0 +1,8 @@
+101,Math,95
+101,History,88
+101,python,90
+102,Math,72
+102,Science,85
+102,python,81
+103,History,91
+103,python,99
