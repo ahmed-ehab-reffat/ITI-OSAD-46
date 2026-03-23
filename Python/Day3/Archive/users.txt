@@ -1,3 +1,0 @@
-user@gmail.com,password123
-am40@gmail.com,123456
-am40@gmial.com,123456

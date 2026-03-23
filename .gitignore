@@ -8,6 +8,7 @@ main
 **/build/
 
 node_modules/
+__pycache__/
 
 Todo.txt
 
