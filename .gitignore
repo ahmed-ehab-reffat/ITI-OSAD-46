@@ -1,15 +1,64 @@
+# --- Personal ---
+Todo.txt
+Projects/
+
+# --- General Compiled Files ---
 main
 *.exe
 *.app
 *.class
 *.o
 *.obj
-**/bin/
-**/build/
+bin/
+build/
+target/
+dist/
+out/
 
+# --- JavaScript / Node ---
 node_modules/
+
+# --- Python ---
+env/
+venv/
+.env/
 __pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
 
-Todo.txt
+# --- Environment & Secrets ---
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env*.local
+*.env
+*.env.*
+!*.env.example
 
-Projects/
+# --- Databases ---
+*.sqlite3
+*.db
+
+# IDEs
+.vscode/
+.idea/
+
+# Build Tools
+.gradle/
+build/
+target/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# --- OS Specific ---
+.DS_Store
+Thumbs.db
+desktop.ini

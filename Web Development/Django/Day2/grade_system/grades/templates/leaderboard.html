@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block title %}
+  Leaderboard | GradeBook
+{% endblock title %}
+{% block content %}
+  <div class="leaderboard-header">
+    <h2>
+      <i class="bi bi-trophy-fill"></i>Leaderboard
+    </h2>
+    <p>Top students ranked by total score across all subjects</p>
+  </div>
+  {% if data %}
+    {% for entry in data %}
+      <div class="card leaderboard-entry {% if entry.rank == 1 %}first-place{% endif %}">
+        <div class="card-body">
+          <div class="rank-badge {% if entry.rank == 1 %}rank-1{% elif entry.rank == 2 %}rank-2{% elif entry.rank == 3 %}rank-3{% else %}rank-other{% endif %}">
+            {% if entry.rank == 1 %}
+              🥇
+            {% elif entry.rank == 2 %}
+              🥈
+            {% elif entry.rank == 3 %}
+              🥉
+            {% else %}
+              {{ entry.rank }}
+            {% endif %}
+          </div>
+          <div class="student-info">
+            <h4>{{ entry.student.name }}</h4>
+            <div class="subject-badges">
+              {% for subject in entry.subjects %}
+                <span class="badge badge-secondary">
+                  {{ subject.code }}
+                  <span>{{ subject.student_score|floatformat:0 }}</span>
+                </span>
+              {% empty %}
+                <span>No subjects yet</span>
+              {% endfor %}
+            </div>
+          </div>
+          <div class="total-score">
+            <div class="label">Total Score</div>
+            <div class="value {% if entry.rank == 1 %}gold{% elif entry.rank == 2 %}silver{% elif entry.rank == 3 %}bronze{% endif %}">{{ entry.total|floatformat:1 }}</div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  {% else %}
+    <div class="card">
+      <div class="empty-state">
+        <i class="bi bi-trophy"></i>
+        <p>No grade data yet. Add some grades to see the leaderboard.</p>
+        <a href="{% url 'grade_create' %}" class="btn btn-primary">
+          Add a Grade
+        </a>
+      </div>
+    </div>
+  {% endif %}
+  <div class="section-footer">
+    <a href="{% url 'grade_list' %}" class="btn btn-outline btn-sm">
+      <i class="bi bi-bar-chart"></i>View all grades
+    </a>
+  </div>
+{% endblock content %}

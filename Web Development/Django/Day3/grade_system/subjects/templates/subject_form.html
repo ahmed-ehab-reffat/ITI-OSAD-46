@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block title %}
+  {{ title }} | GradeBook
+{% endblock title %}
+{% block content %}
+  <div class="form-page">
+    <a href="{% url 'subject_list' %}" class="back-link">
+      <i class="bi bi-arrow-left"></i>Back to Subjects
+    </a>
+    <div class="card">
+      <div class="card-body">
+        <h3>{{ title }}</h3>
+        <form method="post" novalidate>
+          {% csrf_token %}
+          {% for field in form %}
+            <div class="form-group">
+              <label for="{{ field.id_for_label }}">
+                {{ field.label }}
+                {% if field.field.required %}<span class="required">*</span>{% endif %}
+              </label>
+              {{ field }}
+              {% if field.errors %}<div class="invalid-feedback">{{ field.errors|join:", " }}</div>{% endif %}
+            </div>
+          {% endfor %}
+          <div class="form-actions">
+            <button type="submit" class="btn btn-success">
+              <i class="bi bi-check-lg"></i>{{ btn_label|default:"Save" }}
+            </button>
+            <a href="{% url 'subject_list' %}" class="btn btn-outline">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

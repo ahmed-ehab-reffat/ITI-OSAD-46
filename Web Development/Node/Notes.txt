@@ -1,0 +1,2 @@
+https://muhammad-khaled-tech.github.io/DeepJs/
+https://frontendly.io/blog/call-stack-execution-context

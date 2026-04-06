@@ -1,0 +1,13 @@
+from django import forms
+from .models import Student, Feedback
+
+class StudentForm(forms.ModelForm):
+    class Meta:
+        model  = Student
+        fields = ['name', 'age', 'email', 'image']
+
+
+class FeedbackForm(forms.ModelForm):
+    class Meta:
+        model  = Feedback
+        fields = ['email', 'message']

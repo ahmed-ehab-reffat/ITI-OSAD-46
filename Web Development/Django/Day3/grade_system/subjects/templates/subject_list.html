@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% block title %}
+  Subjects | GradeBook
+{% endblock title %}
+{% block content %}
+  <div class="page-header">
+    <div>
+      <h2 class="accent-success">
+        <i class="bi bi-book-fill"></i>Subjects
+      </h2>
+      <p class="subtitle">{{ subjects.count }} subject{{ subjects.count|pluralize }} available</p>
+    </div>
+    <a href="{% url 'subject_create' %}" class="btn btn-success">
+      <i class="bi bi-plus-lg"></i>Add Subject
+    </a>
+  </div>
+  <form method="get">
+    <div class="input-group">
+      <span class="input-icon">
+        <i class="bi bi-search"></i>
+      </span>
+      <input type="text"
+             name="q"
+             value="{{ query }}"
+             class="form-control"
+             placeholder="Search by name, code, or teacher…" />
+      {% if query %}
+        <a href="{% url 'subject_list' %}" class="btn btn-outline">
+          <i class="bi bi-x-lg"></i>
+        </a>
+      {% else %}
+        <button type="submit" class="btn btn-primary">Search</button>
+      {% endif %}
+    </div>
+  </form>
+  {% if query %}
+    <p class="search-results-info">
+      Showing {{ subjects.count }} result{{ subjects.count|pluralize }} for "<strong>{{ query }}</strong>"
+    </p>
+  {% endif %}
+  <div class="card">
+    {% if subjects %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Subject Name</th>
+            <th>Teacher</th>
+            <th>Description</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for subject in subjects %}
+            <tr>
+              <td>
+                <span class="badge badge-primary">{{ subject.code }}</span>
+              </td>
+              <td class="name-cell">
+                <a href="{% url 'subject_detail' subject.pk %}">{{ subject.name }}</a>
+              </td>
+              <td>{{ subject.teacher|default:"—" }}</td>
+              <td>{{ subject.description|truncatechars:60|default:"—" }}</td>
+              <td class="actions-cell">
+                <a href="{% url 'subject_update' subject.pk %}"
+                   class="btn btn-sm btn-outline btn-icon"
+                   title="Edit">
+                  <i class="bi bi-pencil"></i>
+                </a>
+                <a href="{% url 'subject_delete' subject.pk %}"
+                   class="btn btn-sm btn-outline-danger btn-icon"
+                   title="Delete">
+                  <i class="bi bi-trash"></i>
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <div class="empty-state">
+        <i class="bi bi-book"></i>
+        <p>
+          {% if query %}
+            No subjects match "{{ query }}".
+          {% else %}
+            No subjects yet.
+          {% endif %}
+        </p>
+        {% if not query %}
+          <a href="{% url 'subject_create' %}" class="btn btn-success btn-sm">
+            Add the first subject
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+{% endblock content %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}
+  Grade Detail | GradeBook
+{% endblock title %}
+{% block content %}
+  <a href="{% url 'grade_list' %}" class="back-link">
+    <i class="bi bi-arrow-left"></i>Back to Grades
+  </a>
+  <div class="grade-detail-page">
+    <div class="card">
+      <div class="card-body">
+        <div class="score-circle {% if grade.score >= 90 %}score-a{% elif grade.score >= 70 %}score-b{% elif grade.score >= 50 %}score-c{% else %}score-d{% endif %}">{{ grade.score }}</div>
+        <h3 class="student-name">{{ grade.student.name }}</h3>
+        <p class="subject-name">
+          {{ grade.subject.name }} <span class="badge badge-secondary">{{ grade.subject.code }}</span>
+        </p>
+        <div class="info-panel">
+          <div class="info-row">
+            <span class="info-label">Score</span>
+            <span class="info-value">{{ grade.score }} / 100</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Grade Letter</span>
+            <span class="info-value">
+              {% if grade.score >= 90 %}
+                <span class="grade-letter grade-letter-a">A</span>
+              {% elif grade.score >= 80 %}
+                <span class="grade-letter grade-letter-b">B</span>
+              {% elif grade.score >= 70 %}
+                <span class="grade-letter grade-letter-c">C</span>
+              {% elif grade.score >= 60 %}
+                <span class="grade-letter grade-letter-d">D</span>
+              {% else %}
+                <span class="grade-letter grade-letter-f">F</span>
+              {% endif %}
+            </span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Teacher</span>
+            <span class="info-value">{{ grade.subject.teacher|default:"—" }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">Date Recorded</span>
+            <span class="info-value">{{ grade.date_recorded|date:"M d, Y" }}</span>
+          </div>
+        </div>
+        <div class="detail-actions">
+          <a href="{% url 'grade_update' grade.pk %}" class="btn btn-outline">
+            <i class="bi bi-pencil"></i>Edit
+          </a>
+          <a href="{% url 'grade_delete' grade.pk %}" class="btn btn-outline-danger">
+            <i class="bi bi-trash"></i>Delete
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

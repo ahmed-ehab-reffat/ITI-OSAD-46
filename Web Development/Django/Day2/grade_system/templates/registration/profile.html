@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+{% block title %}
+  My Profile | GradeBook
+{% endblock title %}
+{% block content %}
+  <div class="profile-page">
+    <div class="card">
+      <div class="card-body">
+        <div class="profile-header">
+          <div class="avatar-xl">
+            <i class="bi bi-person-fill"></i>
+          </div>
+          <h3>{{ user.get_full_name|default:user.username }}</h3>
+          <p>{{ user.email }}</p>
+        </div>
+        <div class="info-panel">
+          <div class="info-row">
+            <span class="info-label">
+              <i class="bi bi-person"></i>Username
+            </span>
+            <span class="info-value">{{ user.username }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">
+              <i class="bi bi-envelope"></i>Email
+            </span>
+            <span class="info-value">{{ user.email|default:"—" }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">
+              <i class="bi bi-calendar"></i>Joined
+            </span>
+            <span class="info-value">{{ user.date_joined|date:"M d, Y" }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">
+              <i class="bi bi-clock"></i>Last login
+            </span>
+            <span class="info-value">{{ user.last_login|date:"M d, Y — g:i A"|default:"—" }}</span>
+          </div>
+          <div class="info-row">
+            <span class="info-label">
+              <i class="bi bi-shield"></i>Staff Status
+            </span>
+            <span class="info-value">
+              {% if user.is_staff %}
+                <span class="badge badge-success">Admin</span>
+              {% else %}
+                <span class="badge badge-secondary">Regular</span>
+              {% endif %}
+            </span>
+          </div>
+        </div>
+        <div class="profile-actions">
+          <form method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-outline-danger btn-full">
+              <i class="bi bi-box-arrow-right"></i>Logout
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}

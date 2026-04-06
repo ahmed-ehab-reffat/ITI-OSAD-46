@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}
+  Delete Student | GradeBook
+{% endblock title %}
+{% block content %}
+  <div class="delete-page">
+    <div class="card">
+      <div class="card-body">
+        <i class="bi bi-exclamation-circle-fill danger-icon"></i>
+        <h3>Delete student?</h3>
+        <p>You are about to permanently delete:</p>
+        <p class="entity-name">{{ student.name }}</p>
+        <p class="entity-detail">{{ student.email }}</p>
+        <div class="alert alert-warning">
+          <span>
+            <i class="bi bi-exclamation-triangle"></i>
+            <strong>Warning:</strong> This will also delete <strong>all grades</strong> linked to this student. This cannot be undone.
+          </span>
+        </div>
+        <form method="post" class="delete-actions">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash"></i>Yes, delete
+          </button>
+          <a href="{% url 'student_list' %}" class="btn btn-outline">Cancel</a>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
