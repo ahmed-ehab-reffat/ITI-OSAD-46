@@ -1,0 +1,18 @@
+# Virtual Environment
+.venv/
+env/
+venv/
+ENV/
+
+# Python artifacts
+__pycache__/
+*.py[cod]
+
+.env
+
+# Media and Static
+/static/
+/media/
+
+# IDE files
+.vscode/
