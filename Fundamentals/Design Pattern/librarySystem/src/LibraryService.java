@@ -1,41 +1,43 @@
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Singleton Pattern: Ensures only one instance of LibraryService exists.
+ * Observer Pattern (Subject): Manages a list of observers and notifies them.
+ */
 public class LibraryService {
-    private LibraryService instance;
-    private List<Book> books = new ArrayList<>();
+    private static LibraryService instance; // Static instance for Singleton
+    private List<BookInterface> books = new ArrayList<>();
+    private List<Observer> observers = new ArrayList<>(); // List of Observers
 
-    LibraryService(){
+    // Private constructor so no one else can create an instance
+    private LibraryService() {}
 
+    // Method to get the single instance
+    public static LibraryService getInstance() {
+        if (instance == null) {
+            instance = new LibraryService();
+        }
+        return instance;
     }
-    public void addBook(Book book) {
+
+    public void addBook(BookInterface book) {
         books.add(book);
+        notifyObservers("New book added: " + book.getTitle());
     }
 
-    public Book findBook(String title) {
-        for (Book book : books) {
-            if (book.getTitle().equalsIgnoreCase(title)) {
-                return book;
-            }
-        }
-        return null;
+    public List<BookInterface> getBooks() {
+        return books;
     }
 
-    public void borrowBook(String title,User user) {
-        Book book = findBook(title);
-        if (book != null) {
-            book.borrowBook(user);
-        } else {
-            System.out.println("Book not found.");
-        }
+    // Observer methods
+    public void registerObserver(Observer observer) {
+        observers.add(observer);
     }
 
-    public void returnBook(String title) {
-        Book book = findBook(title);
-        if (book != null) {
-            book.returnBook();
-        } else {
-            System.out.println("Book not found.");
+    public void notifyObservers(String message) {
+        for (Observer observer : observers) {
+            observer.update(message);
         }
     }
 }

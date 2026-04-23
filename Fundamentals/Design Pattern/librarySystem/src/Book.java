@@ -1,31 +1,34 @@
-public class Book implements BookInterface{
+/**
+ * Base implementation of a Book.
+ * Following SOLID: This class has one responsibility: representing a book.
+ */
+public class Book implements BookInterface {
     private String title;
     private boolean isAvailable;
+    private int baseDuration = 14; // Default borrowing duration: 14 days
 
     public Book(String title) {
         this.title = title;
         this.isAvailable = true;
     }
 
-    public boolean isAvailable() {
-        return isAvailable;
-    }
+    @Override
     public String getTitle() {
         return title;
     }
-    public void borrowBook(User user) {
-        if (isAvailable) {
-            isAvailable = false;
-            System.out.println(user.getName()+" "+title + " has been borrowed.");
-        } else {
-            System.out.println(title + " is not available.");
-        }
+
+    @Override
+    public boolean isAvailable() {
+        return isAvailable;
     }
 
-    public void returnBook() {
-        isAvailable = true;
-        System.out.println(title + " has been returned.");
+    @Override
+    public void setAvailable(boolean available) {
+        this.isAvailable = available;
     }
 
-
+    @Override
+    public int getBorrowingDuration() {
+        return baseDuration;
+    }
 }

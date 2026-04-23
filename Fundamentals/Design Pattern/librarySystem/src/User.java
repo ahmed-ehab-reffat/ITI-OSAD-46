@@ -1,12 +1,10 @@
-public class User {
+/**
+ * The User class now implements Observer to receive notifications.
+ */
+public class User implements Observer {
     private String name;
-    private boolean isPremium;
-    public User(String name) {
-        this.name = name;
-    }
 
-    public User( String name,boolean isPremium) {
-        this.isPremium = isPremium;
+    public User(String name, boolean isPremium) {
         this.name = name;
     }
 
@@ -14,17 +12,8 @@ public class User {
         return name;
     }
 
-    public boolean isPremium() {
-        return isPremium;
+    @Override
+    public void update(String message) {
+        System.out.println("Notification for " + name + ": " + message);
     }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setPremium(boolean premium) {
-        isPremium = premium;
-    }
-
-
 }
