@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medical AI Agent</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&family=Syne:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="setup-overlay">
+      <div id="setup-box">
+        <div class="logo">
+          <div class="logo-icon">🏥</div>
+          <div>
+            <h1>Medical AI Agent</h1>
+            <p>Configure your API keys to get started</p>
+          </div>
+        </div>
+
+        <div class="field">
+          <label>OpenAI API Key</label>
+          <input type="password" id="openai-key" placeholder="sk-..." />
+          <p class="hint">Used for the AI model and analysis</p>
+        </div>
+
+        <div class="field">
+          <label>OpenAI Model</label>
+          <select id="model-select">
+            <option value="gpt-4o-mini">gpt-4o-mini (recommended)</option>
+            <option value="gpt-4o">gpt-4o</option>
+            <option value="gpt-4.1-mini">gpt-4.1-mini</option>
+            <option value="gpt-4.1">gpt-4.1</option>
+          </select>
+        </div>
+
+        <div class="divider">
+          <hr />
+          <span>WEB SEARCH TOOL</span>
+          <hr />
+        </div>
+
+        <div class="tavily-note">
+          <p>
+            🔍 The web search tool uses <strong>Tavily API</strong>.<br />
+            Get a free key at
+            <a href="https://tavily.com" target="_blank">tavily.com</a> →
+            Dashboard → API Keys
+          </p>
+        </div>
+
+        <div class="field">
+          <label
+            >Tavily API Key
+            <span style="color: var(--muted); font-size: 10px"
+              >(optional — disables search if empty)</span
+            ></label
+          >
+          <input type="password" id="tavily-key" placeholder="tvly-..." />
+        </div>
+
+        <button id="start-app-button" class="btn-primary">
+          Launch Medical Agent →
+        </button>
+      </div>
+    </div>
+
+    <header>
+      <div class="header-left">
+        <div class="header-logo">🏥</div>
+        <div>
+          <h2>Medical AI Agent</h2>
+          <div class="sub" id="model-label">gpt-4o-mini</div>
+        </div>
+      </div>
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>ONLINE</span>
+      </div>
+      <div class="header-right">
+        <button id="settings-button" class="btn-sm btn-outline">
+          ⚙ Settings
+        </button>
+        <button id="new-chat-button" class="btn-sm btn-accent">
+          + New Chat
+        </button>
+      </div>
+    </header>
+
+    <div class="app-body">
+      <div id="sidebar">
+        <div class="sidebar-header">
+          <h3>📋 Stored Cases</h3>
+          <span class="case-count" id="case-count">0</span>
+        </div>
+        <div id="case-list">
+          <div
+            style="
+              text-align: center;
+              padding: 24px 10px;
+              font-size: 12px;
+              color: var(--muted);
+              font-family: 'DM Mono', monospace;
+            "
+          >
+            No cases stored yet.<br />Ask the agent to store a case.
+          </div>
+        </div>
+        <div class="sidebar-footer">
+          <button id="download-csv">
+            ⬇ Download All Cases (CSV)
+          </button>
+        </div>
+      </div>
+
+      <div id="chat-main">
+        <div id="messages">
+          <div id="empty-state">
+            <div class="big-icon">🩺</div>
+            <h3>Medical AI Assistant</h3>
+            <p>
+              Describe your symptoms, upload an MRI or scan image, and ask about
+              nearby hospitals. The agent analyzes inputs and provides safe
+              medical insights.
+            </p>
+            <div class="chips">
+              <div
+                id="chip-1"
+                class="chip"
+              >
+                Chest pain & breathlessness
+              </div>
+              <div
+              id="chip-2"
+                class="chip"
+              >
+                Find cardiology hospital
+              </div>
+              <div
+              id="chip-3"
+                class="chip"
+
+              >
+                Severe headaches
+              </div>
+              <div
+              id="chip-4"
+                class="chip"
+
+              >
+                Store a patient case
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="input-area">
+          <div id="image-preview-area">
+            <img id="preview-img" src="" alt="preview" />
+            <div class="img-info">
+              <div class="img-name" id="img-name">scan.jpg</div>
+              <div class="img-type" id="img-type">MRI / Medical Scan</div>
+            </div>
+            <button
+              id="remove-img"
+              title="Remove image"
+            >
+              ×
+            </button>
+          </div>
+          <div class="input-row">
+            <textarea
+              id="user-input"
+              rows="1"
+              placeholder="Describe symptoms, ask about hospitals, or upload an MRI scan..."
+              onkeydown="handleKey(event)"
+              oninput="autoResize(this)"
+            ></textarea>
+            <div class="input-actions">
+              <label class="icon-btn upload" title="Upload MRI / scan image">
+                🔬
+                <input
+                  type="file"
+                  id="file-input"
+                  accept="image/*"
+                  onchange="handleImage(event)"
+                />
+              </label>
+              <button
+                class="icon-btn send"
+                id="send-btn"
+                title="Send"
+              >
+                ➤
+              </button>
+            </div>
+          </div>
+          <div class="input-hint">
+            ⚠ This is not a medical diagnosis. Always consult a licensed
+            physician.
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="main.js"></script>
+  </body>
+</html>
