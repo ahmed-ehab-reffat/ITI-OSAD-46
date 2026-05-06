@@ -1,0 +1,14 @@
+{
+  "name": "iti-46-os",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jest": "^30.3.0"
+  }
+}
