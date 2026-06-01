@@ -3,6 +3,7 @@ import {createWebHistory, createRouter} from 'vue-router';
 import HomeView from '@/views/HomeView.vue';
 import AboutView from '@/views/AboutView.vue';
 import ProductView from '@/views/ProductView.vue';
+import CartView from '@/views/CartView.vue';
 import NotFoundView from '@/views/NotFoundView.vue';
 
 const routes = [
@@ -10,10 +11,11 @@ const routes = [
   {path: '/about', component: AboutView},
   {
     path: '/product/:id(\\d+)',
-    component: ProductView,
-    props: (route) => ({
-      id: Number(route.params.id)
-    })
+    component: ProductView
+  },
+  {
+    path: '/cart',
+    component: CartView
   },
   {
     path: '/:catchAll(.*)',

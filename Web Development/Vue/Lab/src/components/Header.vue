@@ -1,16 +1,8 @@
 <script setup>
 import {RouterLink} from 'vue-router';
+import {useCartStore} from '@/stores/cartStore';
 
-const props = defineProps({
-  products: {
-    type: Array,
-    required: true
-  },
-  cart: {
-    type: Object,
-    required: true
-  }
-});
+const cartStore = useCartStore();
 </script>
 
 <template>
@@ -27,6 +19,11 @@ const props = defineProps({
         >Home</RouterLink
       >
       <RouterLink
+        to="/cart"
+        class="link link-hover text-base-content/80 hover:text-primary transition"
+        >Cart</RouterLink
+      >
+      <RouterLink
         to="/about"
         class="link link-hover text-base-content/80 hover:text-primary transition"
         >About</RouterLink
@@ -34,7 +31,7 @@ const props = defineProps({
     </div>
     <div class="flex gap-4">
       <div class="dropdown dropdown-end">
-        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+        <RouterLink to="/cart" role="button" class="btn btn-ghost btn-circle">
           <div class="indicator">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -51,29 +48,10 @@ const props = defineProps({
               />
             </svg>
             <span class="badge badge-sm badge-primary indicator-item">{{
-              props.cart.totalBought
+              cartStore.totalItems
             }}</span>
           </div>
-        </div>
-        <div
-          tabindex="0"
-          class="card card-compact dropdown-content bg-base-100 z-10 mt-3 w-52 shadow-xl border border-base-200"
-        >
-          <div class="card-body">
-            <span class="text-lg font-bold text-base-content"
-              >{{ props.cart.totalBought }}
-              {{ props.cart.totalBought === 1 ? 'Item' : 'Items' }}</span
-            >
-            <span class="text-primary font-semibold"
-              >Subtotal: ${{ props.cart.subtotal }}</span
-            >
-            <div class="card-actions">
-              <button class="btn btn-primary btn-block btn-sm">
-                View cart
-              </button>
-            </div>
-          </div>
-        </div>
+        </RouterLink>
       </div>
       <div class="dropdown dropdown-end">
         <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">

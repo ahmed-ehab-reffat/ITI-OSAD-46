@@ -1,38 +1,20 @@
 <script setup>
 import {computed} from 'vue';
-import {onMounted, onUnmounted} from 'vue';
+import {useCartStore} from '@/stores/cartStore';
 
 const props = defineProps({
   product: {
     type: Object,
     required: true
-  },
-  cart: {
-    type: Object,
-    required: true
   }
 });
 
-onMounted(() => {
-  console.log(`Product mounted: ${props.product.name}`);
-});
-
-onUnmounted(() => {
-  console.log('Product unmounted');
-});
+const cartStore = useCartStore();
 
 const finalPrice = computed(() => {
   if (!props.product.discount) return props.product.price;
   return Math.round(props.product.price * (1 - props.product.discount / 100));
 });
-
-const buyProduct = () => {
-  if (props.product.stock > 0) {
-    props.product.stock--;
-    props.cart.totalBought++;
-    props.cart.subtotal += finalPrice.value;
-  }
-};
 </script>
 
 <template>
@@ -40,15 +22,18 @@ const buyProduct = () => {
     <figure class="lg:w-1/2 bg-linear-to-b from-primary/10 to-transparent">
       <img
         :src="product.image"
-        :alt="product.name"
+        :alt="product.imageAlt || product.title"
         class="h-96 w-full object-cover lg:h-full"
       />
     </figure>
     <div class="card-body p-8">
       <div class="flex flex-col gap-6">
         <div class="flex flex-wrap items-center justify-between gap-3">
-          <span v-if="product.badge" class="badge badge-primary badge-lg">
-            {{ product.badge }}
+          <span
+            v-if="product.tags && product.tags.length"
+            class="badge badge-primary badge-lg"
+          >
+            {{ product.tags[0] }}
           </span>
           <span class="text-sm text-base-content/60">
             ID: {{ product.id }}
@@ -57,7 +42,7 @@ const buyProduct = () => {
 
         <div>
           <h1 class="text-4xl font-extrabold tracking-tight text-base-content">
-            {{ product.name }}
+            {{ product.title }}
           </h1>
           <p class="mt-3 max-w-2xl text-base-content/75 leading-relaxed">
             {{ product.description }}
@@ -108,7 +93,7 @@ const buyProduct = () => {
         </div>
 
         <button
-          @click="buyProduct"
+          @click="cartStore.addToCart(product)"
           :disabled="product.stock <= 0"
           class="btn btn-primary btn-wide font-semibold shadow-lg hover:shadow-primary/20 transition-all duration-300"
         >
