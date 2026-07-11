@@ -1,0 +1,18 @@
+Remote File Inclusion Vulnerability
+SQL Injection
+XXS :::: Cross-Site Scripting
+Remote File Uploed
+Command Execution
+File Disclosure
+buffer overflow
+Remote Dump Database
+bypass admin control panal
+Remote Admin Password Change
+data center attack
+dns attack
+penetration of domain
+remote root
+ddos attack
+serer mail supporter
+cpanel commands
+session security

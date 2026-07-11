@@ -1,0 +1,13 @@
+Desgin patterns:
+	https://refactoring.guru/design-patterns
+	
+problem sloving:
+	https://neetcode.io/roadmap     -->> first 6 sections onlyy
+	https://leetcode.com/studyplan/top-sql-50/  --> solve as much as you can
+	
+mock interviews:
+	https://www.pramp.com/
+	
+English practice:
+
+	https://gliglish.com/free

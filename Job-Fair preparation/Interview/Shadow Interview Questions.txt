@@ -1,0 +1,451 @@
+Shadow Interview Open Source
+			10/4/2026 & 11/4/2026
+____________________________________________________________________________
+Karim Ibrahim
+Interviewer: Youssef Elsayed (Full Stack Fixed Solutions)
+____________________________________________________________________________
+
+OOP:
+What are the main pillars, and explain them
+Interface vs abstract class (Mention the diamond problem and the multiple inheritance problem)
+JS:
+Let vs var vs const
+Hoisting
+What features did ES6 add to JS?
+Spread vs Rest
+=== vs ==
+What are promises
+Null vs undefined
+TS:
+What is TS?
+Any vs Unknown
+Type vs Interface
+MongoDB:
+SQL vs NoSQL
+What method is used to diagnose a slow query in MongoDB (Ans: “.explain”)
+What are the types of indexes?
+NodeJS:
+What is the Event Loop?
+____________________________________________________________________________
+Name: Mohamed Sameh
+Interviewer: Youssef Elsayed (Full Stack Fixed Solutions)
+____________________________________________________________________________
+1- Karim's questions.
++
+2- What is the Temporal Dead Zone (TDZ) in ES6?
+3- Explain what is JWT.
+4- Discuss each aspect of the ACID principles.
+5- What are the aggregation methods in MongoDB?
+6- Which MongoDB methods are used for pagination?
+7- What are the phases of the Node.js event loop? (Follow-up question after explaining the event loop)
+8- Does the order of fields matter in compound indexes? (Follow-up question after listing types of indexes)
+9- How do you find, insert, and delete documents in MongoDB?
+10- What is middleware?
+11- What is CORS?
+____________________________________________________________________________
+Name: Zeyad SHahin
+Interviewer: Yehia alsayed (/مش فاكر Fixed Solutions)
+____________________________________________________________________________
+    1. What is the Temporal Dead Zone (TDZ) in ES6?
+    2. The four pillars of OOP? Explain them, diamond problem and its solution
+    3. Can i have private constructors? Why would I need one? (ans: singleton pattern)
+    4. What is node js?
+    5. What is a Promise? Whats its states?
+    6. Explain what is JWT.
+    7. difference between sql and noSQL?
+    8. What are the phases of the Node.js event loop? (Follow-up question after explaining the event loop)
+    9. Does the order of fields matter in compound indexes? 
+    10. What is the definition of typescript? WHats the difference between any and unknown? Can I use the  unknown without type narrowing?
+    11. What is middleware?
+What is CORS? 
+____________________________________________________________________________
+Name: Mohamed Khalil
+Interviewer: Omar khalil (Full Stack (node + react) Fixed Solutions)
+____________________________________________________________________________
+OOP
+    1. What is class ? why do we use it?
+    2. Object vs struct 
+    3. Oop pillars ? explain each one
+    4. Abstract class vs interface
+    5. Data hiding vs data binding 
+    6. Can we make the constructor private ? (singleton)
+    7. Diamond problem and it’s cause (multiple inheritance)
+____________________________________________________________________________
+JS
+    1. What are js datatypes
+    2. What is hoisting ? difference between var, let and const ?
+    3. What is call, apply and bind ?
+    4. Difference between object.create() and object.assign() ?
+    5. How to enforce that object attributes don’t change ? (search for object.freeze() )
+    6. What is event bubbling ?
+    7. Difference between promise.all() and promise.allsettled() ?
+____________________________________________________________________________
+Typescript
+    1. What is typescript and what did it provide to js ?
+    2. Any vs unknown ?
+    3. How to make an attribute required in ts ?
+    4. Interface vs type ?
+____________________________________________________________________________
+Nodejs
+    1. What is nodejs and express ?
+    2. Difference between module.exports and exports ?
+    3. What is JWT ?
+    4. Explain restful api ?
+    5. Http methods ?
+____________________________________________________________________________
+Mongodb
+    1. How to make a database in mongosh ?
+    2. If there is a query that is taking too long how to optimize this ? (either indexing or caching using redis for example)
+    3. Search for upsert in mongodb
+____________________________________________________________________________
+Database
+    1. Does order matter in composite index ? (if your query is using the second element in the index it won’t use the index)
+    2. Explain ACID principles ?
+____________________________________________________________________________
+Name: Andrew Emad
+Interviewer: Mostafa Mohammed
+____________________________________________________________________________
+
+
+OOP
+	What was oop trying to solve
+	What are the types of inheritance (basic , multilevel, multiple inheritance)
+	Types of polymorphism
+	constructor vs destructor
+	Class vs object
+
+     JS
+	Event loop
+	Types of functions
+	High order functions
+	var/let 
+ 
+    TS
+	What is type script
+Union vs intersection
+   
+    Mongodb
+	Vertical vs horizontal scaling 
+	Why is MongoDB good at horizontal scaling? (supports loadbalancer)
+	Types of query selectors (logical, comparison, element ), examples for each
+	The structure of the objectID 
+
+
+   Nodejs
+	Hashing vs encryption
+	What is Node.js 
+	Libuv roles (thread pool + event loop)
+	Parallelism vs concurrency
+Git
+	Pull vs fetch
+	Merge vs rebase
+	2 ways to undo changes (clean, stash)
+____________________________________________________________________________
+Name: Hashing Abdulaziz
+Interviewer: Ibrham 7aga
+____________________________________________________________________________
+
+OOP:
+    • What is pillars and explore each
+    • Why do we use OOP? 
+    • What Is SOLID?
+    • Give example for each SOLID properties
+
+JS:
+    • Undefined vs Notdefined
+    • Hoisting
+    • Var vs let vs const
+
+TS:
+    • Type vs interface
+    • What is Typescript, why using it
+    • How TS compiled
+
+Node:
+    • Event Loop
+    • Is it made in C or c++..
+    • Is NodeJS multi or single threaded?
+    • What is the Node component
+    • MicroTask vs MacroTask
+
+DS:
+    • Stack vs Queue
+    • Array vs Linked Lists
+    • Explain how Hash Map works
+
+Angular:
+- What is Angular?
+- Can we write a Single Page website with Angular?
+- what is the component?
+- What is ngModules?
+- What is Data binding (interpolation) ?
+- JIT, AOT compiler..  7aga kda
+- What is services?
+____________________________________________________________________________
+Name: Alaa
+Interviewer: Hamada or Ibrahim
+___________^__________^_____________
+
+All Hashem's Questions +
+
+    • What is an EventEmitter?
+    • What is npm?
+    • What does package.json include?
+
+    • How do you compile TypeScript?
+    • What is the command used to compile TypeScript?
+    • What is tsconfig.json?
+
+    • Explain how a hash table works.
+    • What is a binary search tree (BST)?
+    • What happens if we remove the root from a BST?
+____________________________________________________________________________
+Name: Ahmed Wael
+Interviewer: Mostafa Mohamed  Stack (Backend with Node + Nest)
+
+OOP:
+    • Why do we use OOP?
+    • Difference between a class and an object
+    • Different types of inheritance
+    • Difference between an interface and an abstract class
+    • How classes work with memory (check stack & heap)
+
+JS:
+    • Object.assign, Object.create
+    • Be careful because JSON.stringify only works with properties not inherited properties on __proto
+    • Higher order functions with examples (event listeners, array methods)
+    • How does map and filter work
+    • Browser event loop (how does it work, who handles apis, microtask, macrotask, etc..)
+    • Code snippets with:
+        ◦ object.assign, object.create
+        ◦ Tricky one with setTimeout and promises inside each other and console logs everywhere
+
+TS:
+    • Difference between types and interfaces
+    • Difference between unions and intersections
+
+Mongo:
+    • What’s BASE in nosql
+    • Structure of objectId
+    • Scaling
+    • How do you remove a field in a document
+    • How do you update a field name in a document
+    • What’s cursor?
+
+Node:
+    • Focused a lot on event loop and libuv, child threads, thread pool
+    • Parallelist vs concurrency
+    • JWT and => Difference between encoding / decoding, hashing, encryption / decryption
+    • What’s a middleware
+
+Git:
+    • What’s the difference between git merge and git rebase (focus on commit history)
+    • Difference between git stash apply and git stash pop
+    • What’s git cherrypick
+____________________________________________________________________________
+Name: Ahmed Ehab Ahmed
+Interviewer: Mostafa Mohamed  Stack (Backend with Node + Nest)
+____________________________________________________________________________
+OOP
+Why do we use OOP
+What are the main pillars
+Abstraction vs Encapsulation
+Why do we use inheritance
+What are the types of inheritance
+Diamond problem and it’s cause
+Abstract class vs interface
+Access modifiers
+Final keyword
+constructor types and what each one do
+____________________________________________________________________________
+JS
+What is hoisting
+What are promises, What is it's states
+What problem promises solved
+async/await vs promise
+Difference between object.create() and object.assign() 
+Types of functions, explain each one and the difference
+Explain the javascript environment in details
+Code snippets about :
+object.create() and object.assign() by log(obj) and log(JSON.stringify(obj))
+2 Arrays comparison by reference not by value
+Async tasks: promise inside setTimout and vise versa
+____________________________________________________________________________
+Typescript
+OR operator vs Nullish Coalescing Operator ( || vs ?? ) 
+Optional operator ( ? )
+Interface vs type 
+____________________________________________________________________________
+Nodejs
+What is middleware
+What is JWT in details
+Hashing vs encryption
+Is NodeJS multi or single threaded?
+Parallelism vs concurrency
+Javascript for Intensive processing and for I/O tasks
+____________________________________________________________________________
+Mongodb
+Mongo uses BASE instead of ACID, what is BASE
+How to rename field
+What is projection
+What is cursor
+_________________________________________________________________________
+Git
+What is git stash
+Git stash pop vs git stash apply
+What is cherrypick
+___________________________________________________________________________
+____________________________________________________________________________
+NAME: ZEYAD 
+    • JS:
+        ◦ event loop
+    • destructuring
+    • call vs apply vs bind
+    • spread operator
+    • nullable & falsey values
+    • how does JIT work
+    • TS:
+        ◦ What is typescript and what does it solve
+        ◦ What is static typing
+        ◦ How is typescript compiled
+        ◦ NPM vs NPX
+        ◦ OPTIONAL ADVANCED question: how does typescript compile modules
+        ◦ Types vs Interfaces
+    • NodeJs
+        ◦ What is the difference between NodeJS and browser environments
+        ◦ what are V8 & LibUV
+        ◦ is node js single threaded
+        ◦ LibUV default worker count
+    • OOP
+        ◦ What is OOP (a paradigm)
+        ◦ OOP Pillars
+        ◦ Solid Principles
+        ◦ Final Class vs interfaces * beware, trick question, final not abstract
+    • Data Structure
+        ◦ Array vs Linked List
+        ◦ Types of Linked lists
+        ◦ what is a BST
+    •  Angular
+        ◦ What is angular? frontend framework providing ….
+        ◦ What is a component
+        ◦ Difference between component and module
+        ◦ What is data binding and what are their types
+____________________________________________________________________________
+Name: Mohamed Abdelhaq
+Interviewer: Omar Sayed (Full Stack (node + react) Fixed Solutions)
+____________________________________________________________________________
+
+All of the above +
+OOP:
+    • Composition, Association, Aggregation and inheritance. (+Use cases)
+    • Diff. btw final & Static 
+    • Final keyword with class?
+    • Aim of this
+    • Struct Vs Class
+    • Access Modifiers
+    • Interface vs Abstract Class
+JS:
+    • Datatypes in JS
+    • Coercion vs Casting
+    • Pass by value vs Pass by reference (Primitive or non-primitive)
+    • Constructor Function
+    • Features in ES6+
+    • Aim of arrow function
+    • Aim of rest & spread 
+    • Snippet=> func(...a,b){console.log(b)} Output??
+    • Aim of Callback, What is callback hell 
+    • How Callback hell is solved?
+    • Diff. btw Filter, map and foreach?
+    • Diff. btw for loop and forEach?
+    • Snippet=> var x=9; x=undefined; valid or no???
+    • What is Prototype?
+    • Explain Prototype chain?
+    • Prototype vs __proto__
+    • snippet=> const obj1={name:”MO”,age:23}; const obj2=Object.create(obj1); console.log(obj1,obj2)??? 
+    • Closure
+    • Object.freeze, Object.Seal
+    • Local Storage vs Session
+    • Axios vs Fetch
+    • snippet=> const a=2; const b= new Number(5); console.log(a===b); true or false??
+    • Event bubbling, how to solve it?
+    • Explain Scope Chain
+Ts:
+    • AIm of ts
+    • Union vs Intersection
+    • Type vs interface
+
+
+Nodejs
+    • What is nodejs
+    • Put vs Patch
+    • Aim of status codes => 201, 403 and 500
+    • What if there is no next() middleware in code?
+    • Stateful vs stateless
+    • Explain JWT + its components
+    • Module.exports vs exports(ref. To module.exports)
+    • Aim of bindings in nodejs
+Mongodb
+    • RDBMS vs non-Relational
+    • How to create db 
+    • What is PK in mongodb
+    • How structure is saved physically (bson)
+    • What is the return of queries? (cursor)
+    • Types of indexes in Mongodb
+    • Upsert
+    • Diff. btw udpateOne() and findOneAndUpdate()
+    • Diff. btw set and Unset?
+    • In what scenarios would you choose to implement index? (explain & redis caching)
+    • Embedding vs Referencing (use cases)
+    • Primary node vs Secondary node
+    • Replication vs Sharding
+    • CAP theorem
+____________________________________________________________________________
+John
+Interviewer: Ibrahim BadrEldin (CDS)
+____________________________________________________________________________
+Note: he was very tricky throughout the interview, asks same question from different angles to make you feel you’re answering wrongly, sometimes asks are you sure about an answer
+JS:
+    • How does JS run? (execution contexts)
+    • What is Event Loop and how it runs in details
+    • MicroTask vs MacroTask
+    • Scope chain
+    • Hoisting snippets 
+    • What is Callback?
+    • What issue arises from callbacks (callback hell), what’s the solution (promise) & improvement (async/await)
+    • Undefined vs not defined vs referenceError vs null
+    • What is a closure?
+    • Which OOP Principle aligns with closure? (Encapsulation)
+    • Npm vs npx & package.json
+    • What is prototype?
+    • Prototype chain
+    • Prototype vs __proto__?
+TS:
+    • What is TS? How does it differ from JS? (keyword: static typing)
+    • How to compile TS? (using npm and npx - npm needs configuring tsconfig first!)
+    • Interface vs type
+Node:
+    • Is NodeJS single threaded? (wants to hear: JS itself is single threaded but NodeJS uses library libuv that manages a thread pool of 4 threads by default)
+    • Is the thread pool worker count configurable?
+    • What is V8 & Libuv?
+    • What is EventEmitter? Which Design Pattern applies PubSub? -> Observer
+    • Hashing vs Encryption
+    • Event Loop in NodeJS: the phases, priorities? setImmediate or Promise/process.nextTick first?
+OOP:
+    • What is OOP, how does it differ from the procedural paradigm, why use it?
+    • Explain OOP pillars with examples
+    • Inheritance types
+    • Diamond issue
+    • Types of polymorphism
+    • SOLID Principles in details with examples for each
+DS:
+    • Array vs LL
+    • Types of LL (single, double, circular)
+    • What is a map? What is a hashmap and how it works?
+    • What is a BST
+    • Stack vs Queue
+Angular
+    • What is Angular? Angular vs React
+    • What is a component
+    • Difference between component and module
+    • What is data binding and their types
+

@@ -1,0 +1,96 @@
+Javascript
+1- Let vs var vs const
+2- What features did ES6 add to JS?
+3- Spread vs Rest operator
+4- What are promises and What is it's states
+5- Null vs undefined
+6- What is the Temporal Dead Zone (TDZ) in ES6?
+7- What are js datatypes
+8- What is call, apply and bind ?
+9- Difference between object.create() and object.assign() ?
+10- How to enforce that object attributes don’t change ? (search for object.freeze() )
+11- What is event bubbling ?
+12- Difference between promise.all() and promise.allsettled() ?
+13- Types of functions
+14- High order functions
+15- undefined vs not defined
+16- Event loop
+
+Typescript
+1- What is typescript and what did it provide to js or why using it?
+2- How TS get compiled
+3- Type vs Interface
+4- Union vs intersection
+5- Any vs unknown ?
+6- Can I use the  unknown without type narrowing
+7- How to make an attribute required in ts ?
+
+Nodejs
+1- What is nodejs
+2- What is express
+3- Difference between module.exports and exports 
+4- What is JWT
+5- Explain restful api
+6- Http methods
+7- Hashing vs encryption
+8- Libuv roles (thread pool + event loop)
+9- Parallelism vs concurrency
+10- Event Loop
+11- What are the phases of the Node.js event loop?
+12- Is it made in C or c++..
+13- Is NodeJS multi or single threaded?
+14- What is the Node component
+15- MicroTask vs MacroTask
+16- What is middleware?
+17- What is CORS?
+
+OOP
+1- What are the main pillars, and explain each one of them
+2- What was oop trying to solve
+3- What is class ? why do we use it?
+4- Object vs struct 
+5- What are the types of inheritance (basic , multilevel, multiple inheritance)
+6- Types of polymorphism
+7- constructor vs destructor
+8- Interface vs Abstract class
+9- Explain the diamond problem and the multiple inheritance problem
+10- Can i have private constructors? Why would I need one?
+11- Data hiding vs data binding 
+12- What is Overloading and Overriding
+13- What Is SOLID?
+14- Give example for each SOLID properties
+ 
+Database
+SQL vs NoSQL
+What method is used to diagnose a slow query in MongoDB
+What are the types of indexes?
+Does the order of fields matter in compound indexes? (Follow-up question after listing types of indexes)
+How do you find, insert, and delete documents in MongoDB?
+Discuss each aspect of the ACID principles.
+What are the aggregation methods in MongoDB?
+Which MongoDB methods are used for pagination?
+How to make a database in mongosh ?
+If there is a query that is taking too long how to optimize this ? (either indexing or caching using redis for example)
+Search for upsert in mongodb
+Does order matter in composite index ? (if your query is using the second element in the index it won’t use the index)
+Explain ACID principles ?
+Vertical vs horizontal scaling 
+Why is mongo good at horizontal scaling? (supports loadbalancer)
+Types of query selectors (logical , comparison , element ) examples for each
+The structure of the objectID 
+base
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
