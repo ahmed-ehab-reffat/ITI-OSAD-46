@@ -1,25 +1,32 @@
-import { SocialMediaAuthFactory } from "./social-media-auth-factory";
-import { TwoFactorAuthFactory } from "./two-factor-auth-factory";
-import { UsernamePasswordAuthFactory } from "./username-password-auth-factory";
-import type { Authentication } from "./Authentication";
-import type { AuthenticationFactory } from "./authentication-factory";
+import { Authenticator } from './core/authenticator';
+import { AuthType } from './core/authType';
+import { SocialAuthMethodFactory } from './social/authMethodFactory';
+import { TwoFactorAuthMethodFactory } from './twoFactor/authMethodFactory';
+import { UsernameAuthMethodFactory } from './username/authMethodFactory';
 
-// Create an instance of the authentication factories
-const socialMediaAuthFactory: AuthenticationFactory =
-  new SocialMediaAuthFactory();
-const twoFactorAuthFactory: AuthenticationFactory = new TwoFactorAuthFactory();
-const usernamePasswordAuthFactory: AuthenticationFactory =
-  new UsernamePasswordAuthFactory();
+const usernameAuthenticator = new Authenticator(
+  new UsernameAuthMethodFactory()
+);
+usernameAuthenticator.authenticate(AuthType.USERNAME, {
+  username: 'ahmed',
+  password: 'P@$$w0rd'
+});
 
-// Create instances of authentication using the factories
-const socialMediaAuthentication: Authentication =
-  socialMediaAuthFactory.createAuthentication();
-const twoFactorAuthentication: Authentication =
-  twoFactorAuthFactory.createAuthentication();
-const usernamePasswordAuthentication: Authentication =
-  usernamePasswordAuthFactory.createAuthentication();
+const socialAuthenticator = new Authenticator(new SocialAuthMethodFactory());
+socialAuthenticator.authenticate(AuthType.INSTAGRAM, { account: '@ahmed' });
+socialAuthenticator.authenticate(AuthType.FACEBOOK, { account: '@ehab' });
 
-// Perform authentication
-socialMediaAuthentication.authenticate();
-twoFactorAuthentication.authenticate();
-usernamePasswordAuthentication.authenticate();
+const twoFactorAuthenticator = new Authenticator(
+  new TwoFactorAuthMethodFactory()
+);
+twoFactorAuthenticator.authenticate(AuthType.HARDWARE, {
+  key: 'bluetooth'
+});
+twoFactorAuthenticator.authenticate(AuthType.BIOMETRIC, {
+  key: 'fingerprint'
+});
+
+// twoFactorAuthenticator.authenticate(AuthType.USERNAME, {
+//   username: 'ahmed',
+//   password: 'P@$$w0rd'
+// });

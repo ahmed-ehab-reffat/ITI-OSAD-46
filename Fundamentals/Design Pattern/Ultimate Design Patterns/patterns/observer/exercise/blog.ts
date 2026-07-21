@@ -1,7 +1,11 @@
 export class Blog {
-  constructor(private name: string) {}
+  #title: string;
 
-  getName() {
-    return this.name;
+  constructor(title: string) {
+    this.#title = title;
+  }
+
+  public get title(): string {
+    return this.#title;
   }
 }

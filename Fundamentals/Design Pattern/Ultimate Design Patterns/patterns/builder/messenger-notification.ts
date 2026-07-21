@@ -1,4 +1,4 @@
-class MessengerNotification {
+export class MessengerNotification {
   private content: string;
   private sender: string;
   private recipient: string;

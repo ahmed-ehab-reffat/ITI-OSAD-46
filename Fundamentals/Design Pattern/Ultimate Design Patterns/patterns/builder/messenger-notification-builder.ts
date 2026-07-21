@@ -1,3 +1,5 @@
+import { MessengerNotification } from './messenger-notification';
+
 class MessengerNotificationBuilder implements NotificationBuilder {
   private content: string;
   private sender: string;

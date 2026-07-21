@@ -1,0 +1,8 @@
+Builder Coding Exercise
+
+You're working on a configuration manager for a game engine.
+The game can have various settings, 
+including graphics quality, sound options, control preferences, and more.
+
+You need to create a configuration manager that allows users to 
+set and customize various game settings

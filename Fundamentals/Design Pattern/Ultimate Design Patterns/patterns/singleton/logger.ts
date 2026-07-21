@@ -1,7 +1,12 @@
-class Logger {
-  private logLevel: LogLevel;
+import { LogLevel } from './log-level';
+
+export class Logger {
+  private logLevel: LogLevel = LogLevel.DEBUG;
+
   // 👇 this approach is called eager initialization
-  private static instance: Logger = new Logger();
+  // private static instance: Logger = new Logger();
+
+  private static instance: Logger;
   private constructor() {}
 
   static getInstance(): Logger {
@@ -17,22 +22,22 @@ class Logger {
   }
 
   logDebug(message: string) {
-    if (this.logLevel === LogLevel.DEBUG) {
+    if (this.logLevel <= LogLevel.DEBUG) {
       console.log(message);
     }
   }
   logInfo(message: string) {
-    if (this.logLevel === LogLevel.INFO) {
-      console.log(message);
-    }
-  }
-  logError(message: string) {
-    if (this.logLevel === LogLevel.ERROR) {
+    if (this.logLevel <= LogLevel.INFO) {
       console.log(message);
     }
   }
   logWarn(message: string) {
-    if (this.logLevel === LogLevel.WARN) {
+    if (this.logLevel <= LogLevel.WARN) {
+      console.log(message);
+    }
+  }
+  logError(message: string) {
+    if (this.logLevel <= LogLevel.ERROR) {
       console.log(message);
     }
   }

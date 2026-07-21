@@ -1,16 +1,13 @@
-import { SubscriptionNotificationService } from "./subscription-notification-service";
+import { SubscriptionNotificationService } from './subscription-notification-service';
 
-export class Subscriber implements SubscriptionNotificationService{
+export class Subscriber implements SubscriptionNotificationService {
+  private email: string;
 
-    private email: string;
-    
-    subscribeToNewProductsAvailability(): void {
-        console.log("Subscribing to new products availability...");
-    }
+  subscribeToNewProductsAvailability(): void {
+    console.log('Subscribing to new products availability...');
+  }
 
-    subscribeToSMSNotifications(): void {
-        console.log("Subscribing to SMS notifications...");
-    }
-
-    
+  subscribeToSMSNotifications(): void {
+    console.log('Subscribing to SMS notifications...');
+  }
 }

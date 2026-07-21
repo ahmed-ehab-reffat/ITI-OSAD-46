@@ -1,11 +1,11 @@
 export class Payment {
-    private type: string;
+  private type: string;
 
-    constructor(type: string) {
-        this.type = type;
-    }
+  constructor(type: string) {
+    this.type = type;
+  }
 
-    getType(): string {
-        return this.type;
-    }
+  getType(): string {
+    return this.type;
+  }
 }

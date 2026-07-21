@@ -1,11 +1,15 @@
 export class User {
-  constructor(private readonly email: string, private mobile: string) {}
+  #name: string;
 
-  getEmail() {
-    return this.email;
+  constructor(name: string) {
+    this.#name = name;
   }
 
-  getMobile() {
-    return this.mobile;
+  public get name(): string {
+    return this.#name;
+  }
+
+  public set name(v: string) {
+    this.#name = v;
   }
 }

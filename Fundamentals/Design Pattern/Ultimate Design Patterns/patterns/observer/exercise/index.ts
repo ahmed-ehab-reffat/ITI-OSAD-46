@@ -1,19 +1,18 @@
-import { Blog } from "./blog";
-import { BlogManagement } from "./blog-management";
-import { Newsletter } from "./newsletter";
-import { User } from "./user";
+import { Customer } from './customer';
+import { Blog } from './blog';
+import { NewsLetter } from './newsLetter';
+import { BlogManagement } from './blogManagement';
 
 const blogManagement = new BlogManagement();
-const ahmed = new User("Ahmed");
-const ali = new User("Ali");
-const hussein = new User("Hussein");
 
-blogManagement.subscribe("NEW_BLOGS", ahmed);
-blogManagement.subscribe("NEWSLETTER", ahmed);
+const ahmed = new Customer('Ahmed');
+const mahmoud = new Customer('Mahmoud');
+const youssef = new Customer('Youssef');
 
-blogManagement.subscribe("NEW_BLOGS", ali);
+blogManagement.subscribe('BLOG', ahmed);
+blogManagement.subscribe('NEWSLETTER', ahmed);
+blogManagement.subscribe('BLOG', mahmoud);
+blogManagement.subscribe('NEWSLETTER', youssef);
 
-blogManagement.subscribe("NEWSLETTER", hussein);
-
-blogManagement.writeNewBlog(new Blog("Design Patterns"));
-blogManagement.writeNewsletter(new Newsletter("Weekly Newsletter 1"));
+blogManagement.addPost(new Blog('Design Patterns'));
+blogManagement.addWeekly(new NewsLetter('Observer Pattern'));

@@ -1,3 +1,3 @@
 export interface ShippingCostCalculator {
-    calculateShippingCost():number;
+  calculateShippingCost(): number;
 }

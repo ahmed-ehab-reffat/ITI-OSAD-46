@@ -1,9 +1,7 @@
-import { Order } from "./Order";
+import { Order } from './Order';
 
 class OrderManagement {
-
-    processOrder(order: Order): void {
-        console.log("Processing order: " + order.getName() + " now...");
-    }
-
+  processOrder(order: Order): void {
+    console.log('Processing order: ' + order.getName() + ' now...');
+  }
 }

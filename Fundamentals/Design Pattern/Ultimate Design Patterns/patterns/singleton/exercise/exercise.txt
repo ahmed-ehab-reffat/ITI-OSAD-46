@@ -1,0 +1,12 @@
+Singleton Coding Exercise
+
+Consider a scenario where you want to implement a session manager 
+for a web application using the Singleton design pattern.
+The session manager should provide a single point of access 
+to user sessions, and it should be initialized with default options.
+
+
+You want to create a session manager with default settings, and you want 
+to ensure that there is only one instance of the session manager throughout 
+the web application.
+

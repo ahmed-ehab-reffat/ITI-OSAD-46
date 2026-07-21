@@ -1,0 +1,8 @@
+Factory Coding Exercise
+
+Developing a web application that supports user authentication through various methods, 
+such as username/password, social media logins, and two-factor authentication.
+
+We need to have a centralized place for creating those authentications, 
+considering that social media logins might have in the future 
+various kinds of social media and two-factor authentication as well.

@@ -1,0 +1,5 @@
+Decorator Coding Exercise
+
+Developing a text processing system that allows users 
+to format text with various styles like bold, italic, and underline.
+Users should be able to apply multiple (composite) styles to the same text.

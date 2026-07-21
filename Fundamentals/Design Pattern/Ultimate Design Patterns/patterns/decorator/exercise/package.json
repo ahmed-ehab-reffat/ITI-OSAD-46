@@ -1,0 +1,8 @@
+{
+  "name": "decorator-exercise",
+  "type": "module",
+  "scripts": {
+    "start": "tsx index.ts",
+    "dev": "tsc watch index.ts"
+  }
+}

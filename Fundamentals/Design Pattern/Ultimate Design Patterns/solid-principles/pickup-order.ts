@@ -1,10 +1,3 @@
-import { Order } from "./Order";
-import { ShippingCostCalculator } from "./shipping-cost-calculator";
+import { Order } from './Order';
 
-export class PickupOrder extends Order implements ShippingCostCalculator {
-    
-    calculateShippingCost(): number {
-        return this.price + this.SHIPPING_COST;
-    }
-
-}
+export class PickupOrder extends Order {}

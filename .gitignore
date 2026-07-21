@@ -15,8 +15,10 @@ target/
 dist/
 out/
 
-# --- JavaScript / Node ---
+# --- JavaScript / Node / TypeScript ---
 node_modules/
+.pnpm-debug.log*
+*.tsbuildinfo
 
 # --- Python ---
 env/

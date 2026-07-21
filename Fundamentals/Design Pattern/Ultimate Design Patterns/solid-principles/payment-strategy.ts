@@ -1,5 +1,3 @@
 export interface PaymentStrategy {
-
-    processPayment(amount: number);
-    
+  processPayment(amount: number): void;
 }

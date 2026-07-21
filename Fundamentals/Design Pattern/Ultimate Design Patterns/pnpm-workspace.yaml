@@ -1,0 +1,7 @@
+allowBuilds:
+  esbuild: true
+
+packages:
+  # This includes all direct subdirectories inside the "projects" folder
+  - 'patterns/**'
+  - 'solid-principles/**'

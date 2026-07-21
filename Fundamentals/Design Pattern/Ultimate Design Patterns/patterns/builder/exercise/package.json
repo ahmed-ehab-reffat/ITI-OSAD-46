@@ -1,0 +1,8 @@
+{
+  "name": "builder-exercise",
+  "type": "module",
+  "scripts": {
+    "start": "tsx index.ts",
+    "dev": "tsx watch index.ts"
+  }
+}

@@ -1,4 +1,4 @@
 export interface SubscriptionNotificationService {
-    subscribeToNewProductsAvailability(): void;
-    subscribeToSMSNotifications(): void;
+  subscribeToNewProductsAvailability(): void;
+  subscribeToSMSNotifications(): void;
 }

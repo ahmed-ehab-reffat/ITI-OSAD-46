@@ -1,0 +1,12 @@
+Observer Coding Exercise
+
+You are developing a newsletter for an author who wants to notify his subscribers about each new blog post or newsletter weekly.
+
+
+Considering that subscribers might want to get notifications for each blog post, newsletter, or both of them,.
+
+
+Subscribers can also unsubscribe, and then they should not get any notifications.
+
+
+Please start first by designing the UML before hands-on coding!

@@ -1,8 +1,7 @@
-import { PaymentStrategy } from "./payment-strategy";
+import { PaymentStrategy } from './payment-strategy';
 
 export class MasterCardPaymentStrategy implements PaymentStrategy {
-    processPayment(amount: number) {
-        console.log("Processing MasterCard payment.");
-    }
-    
+  processPayment(amount: number) {
+    console.log('Processing MasterCard payment.');
+  }
 }

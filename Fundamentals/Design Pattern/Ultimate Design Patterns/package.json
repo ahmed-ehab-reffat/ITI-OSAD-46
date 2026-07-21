@@ -1,0 +1,27 @@
+{
+  "name": "design patterns",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start:patterns": "pnpm --filter \"./patterns/**\" exec tsx index.ts",
+    "start:solid": "pnpm --filter \"./solid-principles/**\" exec tsx index.ts",
+    "dev:patterns": "pnpm --filter \"./patterns/**\" exec tsx watch index.ts",
+    "dev:solid": "pnpm --filter \"./solid-principles/**\" exec tsx watch index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.9.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module",
+  "devDependencies": {
+    "tsx": "^4.23.1"
+  }
+}

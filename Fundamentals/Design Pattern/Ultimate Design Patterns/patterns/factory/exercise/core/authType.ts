@@ -1,0 +1,7 @@
+export enum AuthType {
+  USERNAME,
+  FACEBOOK,
+  INSTAGRAM,
+  HARDWARE,
+  BIOMETRIC
+}

@@ -1,0 +1,8 @@
+Strategy Coding Exercise
+
+You're developing a notification service that should 
+support three different types of notifications to users, 
+e.g., SMS, email, Messenger, and Slack notifications.
+
+Consider having just one function, 
+which is: sendNotification(User user, String message)
