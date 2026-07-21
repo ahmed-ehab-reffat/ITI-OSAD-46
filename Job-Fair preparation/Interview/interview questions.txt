@@ -80,17 +80,26 @@ Types of query selectors (logical , comparison , element ) examples for each
 The structure of the objectID 
 base
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+Design Patterns
+ways you could get asked about desgin pattern What is the desgin pattern Kinds of desgin pattern and explain each one What is the type of (X) Desgin pattern What is the relation between solid , desgin pattern,oop
+what is the differnce between c++ and java
+why is compostion better than inheritance
+abstract class vs interface
+CIM & CRM
+adapter pattern , who is getting wrapped the old or the new interface
+differnce between refrence type and object type parent x = new child()
+the class methods are all concrete but i decided to make the class abstract, why?
+mention @overide when asked for polymorphism
+which patterns did you use in X frame work
+differnce between frameworks, back or front , what are the advantage and disadvantages of each one
+is the middleware strctural or behavioral?
+abstract class vs interface
+after java 9 , why did we need a private method in interface
+in abstract class i can declare non constant variables
+is the middleware proxy or chain of responsibility
+Comparing between frameworks
+Example of patterns in framework.
+Explain one of the projects you worked on
+Make a diagram to show a project idea
+macros vs functions
 
