@@ -1,0 +1,203 @@
+Semantic tags
+Flex vs Grid
+Px vs rem vs em
+Composition vs Aggregation vs Association vs Inheritance
+Class vs instance
+4 pillars
+Overloading vs overriding
+Types of inheritance
+Solid + explain each one of them
+Dependency inversion + Dependency Injection
+Filter vs map vs reduce
+GIT: Revert vs Reset
+Use case branch not found locally => fetch
+Fetch vs pull
+Git stash + use case
+Local storage vs session vs cookies
+Token vs JWT
+adv.& disadv. Of JWT
+Contents of JWT
+Can the payload be decoded?
+Access Token vs. Refresh Token
+Use case to have more than one access token
+Hash vs encryption
+Types of hash methods
+useMemo vs useCallback vs React.memo
+ useState vs useRef
+Aggregation Func vs Window func
+technical strategies to optimize the performance of a high-latency API
+Normalization vs Denormalization + use cases
+Solutions to inc. speed of retrieval from db (more than one answer)
+Adv. & Disadv. Of indexing + use case for indexing
+Data Warehousing
+Causes & solutions of N+1 problem
+Select_related vs prefetch_related + Relationships used for each one (1-M.etc..)
+Request lifecycle in django forward and backward + explain each file(settings.py,urls.py.)
+Serialization in depth (in/out serialization)
+Types of views in dj
+Callable func => .as_view()
+Asgi vs wsgi
+Immutable vs mutable
+Python datatypes
+List vs tuple
+Exception handling in py 
+What if an error occurred and I need to continue logic normally => pass in except block
+Decorator
+Shallow copy vs deep copy
+Closures
+
+*args vs **kwargs
+Use Cases for Recursion vs Loop
+Webhook
+Rebase vs merge
+Middlewares
+Put vs patch
+Primary index vs cluster index vs non cluster index
+Lazy loading
+Null vs undefined in js
+Handle migration conflicts?
+Aim of alt attr in html
+Which is faster for performance: inline styles, <style> tags, or external CSS files?
+Singleton and creational + use cases
+Like vs ilike
+How to handle merge conflicts?
+
+Diff between Big O vs Theta Θ vs Big Omega Ω Notations
+Decrator when it run before or after? (ans is both)
+Diff between == and is
+Diff between JWT and OAuth
+
+1- 4 Pillars OOP
+2- SOLID
+3- git rebase vs merge
+4- PS: Best time to buy and sell
+5- Deployment: What are the differences between the development environment and the production environment
+6- For those who know AI:  RAG,  VectorDB, open-source models for SST, TTS, Image Classification, Prompt Engineering
+7- Backend: JWT, how to control permissions, how to design a payment feature, how to avoid payment on double clicking from the same user (user redis to reject recent request)
+8- Validity vs constraints
+9- Django vs Express
+10- Django: select_related vs prefetch_related
+11-DB: SQL vs. No SQL, ACID
+12- React: DOM VS BOM, VDOM, State Management, stores and context, Event Loop
+13- WEB: inline vs block, Do we put the script above or below, transition vs animation
+14- Python: multithreading vs multiprocessing
+
+Is everything in python is an object 
+What is object chaining 
+Reference sharing 
+Object caching 
+Oop in python, explain each piller
+Is and ==
+List vs tuple(performance, mutability, how it works under the hood) 
+Mutability vs immutability 
+Pass by value vs by reference vs by object
+Python apply which? 
+Multiprocessing vs multithreading vs async deeeeply explain each (زنقني فيهم بتاع ربع ساعه)
+What is gil
+Request lifecycle in Django 
+Makemigrations vs migrate
+N+1 Problem 
+Select related vs prefetch related 
+What is csrf tokens 
+JIT vs AOT
+Closures
+Callback with closure 
+Hoisting 
+Decorators 
+State and props in react
+Var definition and props
+Props drilling 
+Use state vs use ref
+Useref
+Use memo vs use callback 
+
+1- if we have an end-point return the response in 6 secs we want it in 2 secs(what will u do?) 
+4- types of patterns
+5- (builder, singleton), observable, adapter
+6- PS (max heights of altitude)
+7- JWT
+8- web hook
+9- microservices
+10- memory allocation in python 
+11- multi threading vs multi processing
+12- Sql vs noSql
+13- ACID principles
+14- validations vs Constraint
+15- N+1 problem
+16- select_related vs prefetch_related 
+17- Serialization
+18- signals in Django
+19- JS single threaded and how does it works
+20- clustering
+21- Hoisting
+22- closure 
+23- BOM vs DOM
+24- Virtual DOM
+25- Life cycle component in React 
+26- useContex vs Redux and (what is the big problem at useContex not exist in Redux)
+27- useMemo vs useCallBack vs React.memo
+28- Semantic Tags
+29- display block vs display-inline
+30- animation vs Transition
+31-when making a login feature tell me the process and where u save the tokens
+32- access token vs refresh token
+
+1- Introduce yourself, a project you worked on and a problem you faced
+2- What’s the difference between git reset and git revert
+3- What’s the lifecycle of a request/response in django
+4- D in SOLID, diff between dependency inversion and dependency injection
+5- python manage.py CLI commands (DJANGO)
+6- load balancing and deployment strategies
+7- Multi-session django
+8- for of, for in in js
+9- Serialization in Django
+10- Webhooks and JWT
+11- Aggregation vs windows functions in SQL
+12- Clustered and non-clustered index in DBs
+13- useMemo vs React.memo vs useCallback
+14- Diff between Big O vs Theta Θ vs Big Omega Ω Notations
+15- Does python have a === like the one in js
+16- *args vs **kwargs in python
+17- Normalization vs denormalization when to use each in DBs
+18- How would you debug the following: the app works well on some browsers but on others it doesn’t, on some mobile phones it does but on some it doesn’t.
+19- How would you handle a bottleneck in the db or an api that is slow.
+20- Types of views => viewset, function views, class views
+21- What would you do if you’re on a branch locally and you can’t checkout to main.
+
+1. What is fork in node
+2. Diff between set immediate and get immediate in js
+3. What is cluster index in sql
+Self invoking function
+Currying function in js
+Api types
+Diff between rest and web services 
+Treggers, procedures and functions
+Scaller, aggregate function in sql
+Angular pipes, CLI and how data flow between components
+Database types - redis
+Procedures vs functions 
+Concurrency 
+Declarative vs imperative - which is oop
+Cluster vs non-cluster index
+Hoisting 
+Higher order functions
+Curring
+Emit 
+Restful APIs vs Soup 
+Json vs xml
+Data integrity
+clustered - non clustered
+call back hell
+cross join
+if i use where clouse with cross join
+piping node
+reactor pattern
+factory pattarn
+consept of abstract in oop
+overloadding - overriding
+container vs pod
+soap api , restful api , graphql
+mvc vs web api
+Apply function in js
+Bind function in js 
+What’s closure  function in javascript 

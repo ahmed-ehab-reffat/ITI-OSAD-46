@@ -1,0 +1,149 @@
+هبعتلك اساله  تقريبا مغطيه جزء كبير
+
+‎أسئلة حقيقية من إنترفيوهات فرونت إند – متفوتش ولا سؤال 
+
+‎لو داخل على إنترفيو Frontend Developer سواء جونيور أو ميد أو سينيور فـ مهم تكون مش بس عارف الأساسيات لكن فاهم الحاجات العميقة اللي بتميز أي حد قوي في المجال. 
+‎اسئله (HTML & CSS): 
+
+‎ إيه الفرق بين em, rem, و px في CSS؟ وامتى تستخدم كل واحد؟
+‎ إيه الفرق بين absolute, relative, fixed, و sticky في الـ Positioning؟
+‎ إزاي الـ Critical Rendering Path بيأثر على سرعة تحميل الصفحة؟
+‎ إيه الفرق بين inline, block, و inline-block؟
+‎ إيه هي الـ Paint & Layout في الـ Rendering Engine؟ وازاي تقلل تأثيرهم على الأداء؟
+‎ إزاي تتجنب الـ Cumulative Layout Shift (CLS) وتحسن تجربة المستخدم؟
+‎ إيه الفرق بين z-index والـ stacking context في CSS؟
+‎ إزاي تتأكد إن موقعك Responsive لكل الشاشات؟
+‎اسئله (JavaScript): 
+
+‎ إيه الفرق بين null و undefined؟
+‎ إزاي الـ Event Loop بيشتغل في الـ Browser؟ وليه مهم تفهمه؟
+‎ إيه الفرق بين let, const, و var من ناحية الـ Scope والـ Hoisting؟
+‎ إيه الفرق بين == و === في JavaScript؟
+‎ إيه الفرق بين call, apply, و bind؟
+‎ إيه هي الـ Closure؟ وازاي تشرحها لشخص مبتدئ؟
+‎ إيه الفرق بين Deep Copy و Shallow Copy؟ وإزاي تعمل كل واحدة في JavaScript؟
+‎ إيه الفرق بين Synchronous و Asynchronous؟ وإزاي JavaScript بتتعامل مع الـ Async Code؟
+‎ إيه الفرق بين Promise و async/await؟ وإمتى تستخدم كل واحد؟
+‎ إزاي تكتب كود JavaScript Performant وما يسببش مشاكل في الـ Performance؟
+‎ إيه هي الـ Event Delegation وليه بنستخدمها؟
+‎ اسئله (React.js)
+
+‎ إيه الفرق بين الـ Class Components والـ Functional Components؟
+‎ إيه الفرق بين useState و useReducer؟ وامتى تستخدم كل واحد؟
+‎ إيه الفرق بين useEffect و useLayoutEffect؟
+‎ إيه المشاكل اللي ممكن تحصل بسبب الـ Virtual DOM؟
+‎ إيه الفرق بين Client-Side Rendering (CSR) و Server-Side Rendering (SSR) و Static Site Generation (SSG)؟
+‎ إيه الفرق بين Controlled و Uncontrolled Components؟
+‎ إزاي تتعامل مع Memory Leaks في React؟
+‎ إزاي تعمل Performance Optimization في React؟
+‎ أسئله (Performance & Optimization)
+
+‎ إيه هي الـ Critical Rendering Path؟ وإزاي تحسن سرعة تحميل الصفحة؟
+‎ إزاي تطبق Code Splitting في React؟
+‎ إيه الفرق بين Debouncing و Throttling؟ وامتى تستخدم كل واحد؟
+‎ إزاي تتعامل مع الـ Memory Leaks في React؟
+‎ إيه الفرق بين Lazy Loading و Eager Loading؟
+‎ إزاي تحسن Web Performance Metrics زي LCP, FID, CLS؟
+‎ إزاي تتأكد إن موقعك متوافق مع
+Core Web Vitals؟
+‎ أسئلة (Next.js)
+
+‎ إيه الفرق بين getStaticProps و getServerSideProps؟ وامتى تستخدم كل واحدة؟
+‎ إزاي تقدر تعمل Incremental Static Regeneration (ISR) وليه ممكن تحتاجه؟
+‎ إيه الفرق بين Server Components و Client Components في Next.js 13؟
+‎ إيه الفرق بين Pages Router و App Router في Next.js 13+؟ وإزاي بيأثر على إدارة البيانات؟
+‎ إزاي تقدر تستخدم Middleware في Next.js؟ وامتى يكون مفيد؟
+‎ إزاي تتعامل مع المصادقة (Authentication) في Next.js؟ وإيه أفضل الحلول؟
+‎ إزاي تعمل Dynamic Routing في Next.js؟ وإيه الفرق بين [id].js و [[...slug]].js؟
+‎ إيه هي Image Optimization في Next.js وإزاي بتساعد في تحسين الأداء؟
+‎ إزاي تقدر تعمل API Routes في Next.js؟ وإيه الفايدة منها؟
+‎ إزاي تستخدم next.config.js وليه ممكن تحتاج تعدل علي
+
+#######################################################################
+
+🔷 JavaScript
+🔹 الفرق بين Promise و Callback؟ ويعني إيه Callback Hell؟
+🔹 الفرق بين setTimeout و Promise و async/await؟
+🔹 إيه هو الـ Event Loop؟ وفرق الـ Microtask vs Macrotask؟
+🔹 يعني إيه ES6؟ إيه أهم المميزات اللي ضافها؟
+🔹 الفرق بين await forEach و await for of؟ وليه الأولى بتعمل مشاكل؟
+---
+
+🔷 React & Next.js
+🔹 إيه الفرق بين SSR, CSR, SSG, ISG, SPA؟
+🔹 إمتى تستخدم SSR لتحسين SEO؟ وإزاي Next.js بيساعد؟
+🔹 يعني إيه Context API؟ وامتى تستخدمه بدل Redux؟
+🔹 يعني إيه Hooks؟ وشرح لأهمهم: useEffect, useState, useRef, useMemo, useCallback.
+--- 
+
+🔷 Integration & API Handling
+🔹 الفرق بين fetch في الـ frontend و HTTP request في الـ backend؟
+🔹 إزاي تتعامل مع الـ APIs؟ وبتفضل axios ولا fetch؟
+🔹 إزاي تدير التوكن؟ Cookies ولا LocalStorage؟ وهل في مخاطرة؟
+🔹 إزاي تتعامل مع Role-Based Access؟ وإيه الفرق بينها وبين Attribute-Based؟
+🔹 يعني إيه Implicit Flow؟ وليه مهم في الـ OAuth؟
+---
+
+🔷 Performance & Rendering
+🔹 إزاي تـOptimize أداء صفحة React؟
+🔹 إزاي lazy-load المكونات أو الصور؟
+🔹 إزاي تتعامل مع الـ hydration issues في Next.js؟
+🔹 الفرق في UI بين Safari و Chrome؟ وإيه هي claims؟
+🔹 WebP للصور وWebM للفيديو: ليه مهمين؟ وإزاي تستخدمهم؟
+---
+
+🔷 Testing & Code Quality
+🔹 إزاي تكتب Unit Test بمكتبات زي Jest أو RTL؟
+🔹 Snapshot Testing؟ Integration Testing؟
+🔹 إزاي تعمل Mock للـ APIs في test؟
+---
+
+🔷 Advanced Topics
+🔹 GRPC vs REST؟ وليه الأول أسرع (Binary)?
+🔹 إزاي تستخدم SQLite كـ local DB؟
+🔹 إزاي تبني Electron app باستخدام Typescript؟
+🔹 إزاي تـ handle الـ global errors في React؟
+🔹 إزاي تتعامل مع Authentication state بين Tabs؟
+🔹 إزاي تحافظ على security في تطبيق SPA؟
+---
+
+🔷 Real-time & WebSockets
+🔹 إيه هو Socket.io؟ وإزاي تستخدمه في Chat أو Notifications؟
+🔹 إيه الفرق بين WebRTC و Web SDKs زي Agora؟
+🔹 إزاي تبني Notification System في Next.js؟
+🔹 هل ممكن تربط بين Frontend و MQTT؟ إمتى؟
+---
+
+🔷 Algorithms for Interviews
+🔹 إزاي تشيل الـ Duplicates من Array بكفاءة؟
+🔹 إزاي تعمل Debounce أو Throttle للـ API Calls؟
+🔹 Easiest way to flatten deeply nested array?
+---
+
+𝗝𝗮𝘃𝗮𝗦𝗰𝗿𝗶𝗽𝘁 𝗖𝗼𝗿𝗲
+1- Closures & Scope
+2- Event Loop & Async
+3- Promises & Async/Await
+4- Hoisting & This Keyword
+5- Prototypes & Inheritance
+
+𝗥𝗲𝗮𝗰𝘁 𝗠𝗮𝘀𝘁𝗲𝗿y
+6- useState & useEffect
+7- Context API & useContext
+8- Custom Hooks
+9- Component Lifecycle
+10- State Management (Redux/Zustand)
+
+𝗣𝗲𝗿𝗳𝗼𝗿𝗺𝗮𝗻𝗰𝗲 & 𝗢𝗽𝘁𝗶𝗺𝗶𝘇𝗮𝘁𝗶𝗼𝗻
+11- Code Splitting & Lazy Loading
+12- Memoization (useMemo, useCallback)
+13- Virtual DOM & Reconciliation
+14- Bundle Optimization
+15- Web Vitals & Performance Metrics
+
+𝗘𝘀𝘀𝗲𝗻𝘁𝗶𝗮𝗹 𝗖𝗼𝗻𝗰𝗲𝗽𝘁𝘀
+16- Event Delegation & Bubbling
+17- Debouncing & Throttling
+18- Error Boundaries & Error Handling
+19- Browser Storage (localStorage, sessionStorage)
+20- REST APIs & HTTP Methods

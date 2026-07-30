@@ -6,7 +6,7 @@ export class Italic extends CompositeDecorator {
     super(textProcessor);
   }
 
-  process(): string {
+  override process(): string {
     return super.process() + ' Italic';
   }
 }
